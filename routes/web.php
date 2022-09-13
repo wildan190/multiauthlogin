@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
+Route::resource('posts', PostController::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,7 @@ Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('create',[PostController::class,'create'])->name('posts.create');
 
 
 Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
