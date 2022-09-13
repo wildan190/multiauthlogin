@@ -105,7 +105,7 @@ class AdminController extends Controller
            if( !$validator->passes() ){
                return response()->json(['status'=>0,'error'=>$validator->errors()->toArray()]);
            }else{
-                
+            // Encrypt Password   
             $update = User::find(Auth::user()->id)->update(['password'=>\Hash::make($request->newpassword)]);
 
             if( !$update ){

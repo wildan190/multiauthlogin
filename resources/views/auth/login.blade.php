@@ -7,6 +7,9 @@
 	<title>Login page</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+	<style>
+		
+	</style>
 </head>
 
 <body class="my-login-page">
@@ -61,9 +64,7 @@
 										Login
 									</button>
 								</div>
-								<div class="mt-4 text-center">
-									Don't have an account? <a href="{{route('register')}}">Create One</a>
-								</div>
+								
 							</form>
 						</div>
 					</div>
