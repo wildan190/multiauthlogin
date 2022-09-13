@@ -19,9 +19,6 @@ class CreatePostsTable extends Migration
             $table->string('adstype');
             $table->string('size');
             $table->string('address');
-            $table->string('ruang_kelas');
-            $table->string('jumlah_mhs');
-            $table->string('tanggal_mulai');
             $table->timestamps();
         });
     }
