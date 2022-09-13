@@ -3,6 +3,6 @@
 
 @section('content')
 
-here------
+This is Admin Page!!!
 
 @endsection
