@@ -1,5 +1,5 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
- 
+@section('title','Add Client')
 @section('content')
 <div class="row mt-5 mb-5">
     <div class="col-lg-12 margin-tb">
