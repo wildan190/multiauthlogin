@@ -1,7 +1,7 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
 @section('title','Add Client')
 @section('content')
-<div class="row mt-5 mb-5">
+<div class="row md-5 mb-5">
     <div class="col-lg-12 margin-tb">
         <div class="float-left">
             <h2>New Client</h2>
@@ -22,10 +22,10 @@
         </ul>
     </div>
 @endif
- 
+
 <form action="{{ route('posts.store') }}" method="POST">
     @csrf
- 
+
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -53,7 +53,7 @@
         </div>
        
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
  
