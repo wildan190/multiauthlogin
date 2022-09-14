@@ -40,7 +40,7 @@
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2021 &mdash; Your Company
+						Copyright &copy; 2021 &mdash; PT Sinar Indah Padma
 					</div>
 				</div>
 			</div>
