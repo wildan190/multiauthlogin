@@ -21,7 +21,7 @@
     @endif
  
     <table class="table table-striped">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th width="20px" class="text-center">No</th>
             <th>Client Name</th>

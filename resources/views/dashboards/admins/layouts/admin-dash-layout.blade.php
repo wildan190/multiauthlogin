@@ -91,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <li class="nav-item">
                 <a href="{{ route('posts.index')}}" class="nav-link {{ (request()->is('post/index*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-clipboard-list"></i>
+                  <i class="nav-icon fas fa-briefcase"></i>
                   <p>
                     Show Client Data
                   </p>
