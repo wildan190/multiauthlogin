@@ -132,7 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      <strong>We Work With Pride</strong>
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2022 <a href="#">PT. Sinar Indah Padma</a>.</strong> All rights reserved.
