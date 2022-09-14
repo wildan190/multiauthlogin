@@ -6,11 +6,10 @@
         <div class="float-left">
             <h2>New Client</h2>
         </div>
-        <div class="float-right">
-            <a class="btn btn-secondary" href="{{ route('posts.index') }}"> Back</a>
-        </div>
     </div>
 </div>
+<div class="alert alert-info" role="alert">
+  New Client </div>
  
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -26,8 +25,9 @@
 <form action="{{ route('posts.store') }}" method="POST">
     @csrf
 
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
             <div class="form-group">
                 <strong>Client</strong>
                 <input type="text" name="cclient" class="form-control" placeholder="Client">
@@ -36,7 +36,11 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Ads Type</strong>
-                <input type="text" class="form-control" name="adstype" placeholder="Ads Type"></textarea>
+                <select type="text" class="form-control" name="adstype" placeholder="Ads Type">
+                    <option>Billboard</option>
+                    <option>Videotron</option>
+                    <option>Banner</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -56,6 +60,7 @@
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </div>
+</div>
  
 </form>
 @endsection
