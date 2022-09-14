@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
   <base href="{{ \URL::to('/') }}">
-
+  <link rel="icon" href="{{ asset('dist/img/co_logo.png')}}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ \URL::to('/')}}" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/co_logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Sinar Indah Padma</span>
     </a>
 
@@ -89,7 +89,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
               </li>
-               <li class="nav-item">
+              <li class="nav-item">
+                <a href="{{ route('posts.create')}}" class="nav-link {{ (request()->is('post/create*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-clipboard-list"></i>
+                  <p>
+                    Edit Client Data
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('admin.profile')}}" class="nav-link {{ (request()->is('admin/profile*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
@@ -97,16 +105,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
               </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.settings')}}" class="nav-link {{ (request()->is('admin/settings*')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-               Settings
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
+              <li class="nav-item">
+                <a href="{{ route('admin.settings')}}" class="nav-link {{ (request()->is('admin/settings*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-cog"></i>
+                  <p>
+                  Settings
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
