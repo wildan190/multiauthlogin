@@ -72,15 +72,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-                <a href="{{ route('admin.dashboard')}}" class="nav-link {{ (request()->is('user/dashboard*')) ? 'active' : '' }}">
+                <a href="{{ route('user.dashboard')}}" class="nav-link {{ (request()->is('user/dashboard*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Dashboard
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('usrposts.index')}}" class="nav-link {{ (request()->is('usrpost/index*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-briefcase"></i>
+                  <p>
+                    Show Client Data
+                  </p>
+                </a>
+              </li>
                <li class="nav-item">
-                <a href="{{ route('admin.profile')}}" class="nav-link {{ (request()->is('user/profile*')) ? 'active' : '' }}">
+                <a href="{{ route('user.profile')}}" class="nav-link {{ (request()->is('user/profile*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                    Profile
@@ -88,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
           <li class="nav-item">
-            <a href="{{ route('admin.settings')}}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
+            <a href="{{ route('user.settings')}}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                Settings
