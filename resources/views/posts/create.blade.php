@@ -21,7 +21,7 @@
 <div class="row md-5 mb-5">
     <div class="col-lg-5 margin-top 0">
         <div class="float-left">
-            <h2 class="mb-0">New Client</h2>
+            <h1>New Client</h1>
         </div>
     </div>
 </div>
