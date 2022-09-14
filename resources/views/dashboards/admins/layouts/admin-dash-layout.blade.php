@@ -90,10 +90,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('posts.create')}}" class="nav-link {{ (request()->is('post/create*')) ? 'active' : '' }}">
+                <a href="{{ route('posts.index')}}" class="nav-link {{ (request()->is('post/index*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-clipboard-list"></i>
                   <p>
-                    Edit Client Data
+                    Show Client Data
                   </p>
                 </a>
               </li>
@@ -143,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <strong>We Work With Pride</strong>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2022 <a href="#">PT. Sinar Indah Padma</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2022 <a href="https://www.instagram.com/sip_adv/" target="blank">PT. Sinar Indah Padma</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

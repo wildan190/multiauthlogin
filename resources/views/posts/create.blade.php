@@ -1,15 +1,7 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
 @section('title','Add Client')
 @section('content')
-<div class="row md-5 mb-5">
-    <div class="col-lg-12 margin-tb">
-        <div class="float-left">
-            <h2>New Client</h2>
-        </div>
-    </div>
-</div>
-<div class="alert alert-info" role="alert">
-  New Client </div>
+
  
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -26,6 +18,13 @@
     @csrf
 
 <div class="container">
+<div class="row md-5 mb-5">
+    <div class="col-lg-5 margin-top 0">
+        <div class="float-left">
+            <h2 class="mb-0">New Client</h2>
+        </div>
+    </div>
+</div>
     <div class="row">
         <div class="col-sm">
             <div class="form-group">
