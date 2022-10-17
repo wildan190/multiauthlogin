@@ -3,8 +3,88 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\timesheet;
 
-class TimesheetController extends Controller
+class usrPostController extends Controller
 {
-    //
+    public function index()
+    {
+        /// mengambil data terakhir dan pagination 5 list
+        $usrposts = timesheet::latest()->paginate(5);
+         
+        /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
+        /// include dengan number index
+        return view('timesheet.index',compact('timesheet'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+  
+    public function create()
+    {
+        /// menampilkan halaman create
+        return view('timesheet.create');
+    }
+  
+    public function store(Request $request)
+    {
+        /// membuat validasi untuk title dan content wajib diisi
+        $request->validate([
+            'tanggal' => 'required',
+            'proyek' => 'required',
+            'tempat_kerja' => 'required',
+            'waktu' => 'required',
+            'aktivitas' => 'required',
+        ]);
+         
+        /// insert setiap request dari form ke dalam database via model
+        /// jika menggunakan metode ini, maka nama field dan nama form harus sama
+        timesheet::create($request->all());
+         
+        /// redirect jika sukses menyimpan data
+        return redirect()->route('timesheet.index')
+                        ->with('success','Timesheet created successfully.');
+    }
+  
+    public function show(timesheet $post)
+    {
+        /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
+        /// berdasarkan id yang dipilih
+        /// href="{{ route('posts.show',$post->id) }}
+        return view('timesheet.show',compact('timesheet'));
+    }
+  
+    public function edit(timesheet $post)
+    {
+        /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
+        /// berdasarkan id yang dipilih
+        /// href="{{ route('posts.edit',$post->id) }}
+        return view('timesheet.edit',compact('timesheet'));
+    }
+  
+    public function update(Request $request, timesheet $timesheet)
+    {
+        /// membuat validasi untuk title dan content wajib diisi
+        $request->validate([
+            'tanggal' => 'required',
+            'proyek' => 'required',
+            'tempat_kerja' => 'required',
+            'waktu' => 'required',
+            'aktivitas' => 'required',
+        ]);
+         
+        /// mengubah data berdasarkan request dan parameter yang dikirimkan
+        $timesheet->update($request->all());
+         
+        /// setelah berhasil mengubah data
+        return redirect()->route('timesheet.index')
+                        ->with('success','Timesheet updated successfully');
+    }
+  
+    public function destroy(timesheet $timesheet)
+    {
+        /// melakukan hapus data berdasarkan parameter yang dikirimkan
+        $timesheet->delete();
+  
+        return redirect()->route('timesheet.index')
+                        ->with('success','Timesheet deleted successfully');
+    }
 }
