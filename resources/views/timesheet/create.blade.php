@@ -28,30 +28,42 @@
     <div class="row">
         <div class="col-sm">
             <div class="form-group">
-                <strong>Client</strong>
-                <input type="text" name="cclient" class="form-control" placeholder="Client">
+                <strong>Tanggal</strong>
+                <input type="date" name="tanggal" class="form-control" placeholder="dd/mm/yy">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Ads Type</strong>
-                <select type="text" class="form-control" name="adstype" placeholder="Ads Type">
-                    <option>Billboard</option>
-                    <option>Videotron</option>
-                    <option>Banner</option>
+                <strong>Proyek</strong>
+                <select type="text" class="form-control" name="proyek" placeholder="">
+                    <option style="background-color: #808080; color: white;">Select</option>
+                    <option>Sinarmas - Videotron</option>
+                    <option>Lippo Mal Karawaci - Billboard</option>
+                    <option>Ciputra - Billboard</option>
                 </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Size</strong>
-                <input type="text" class="form-control" name="size" placeholder="Size" />
+                <strong>Place</strong>
+                <select type="text" class="form-control" name="tempat_kerja" placeholder="Work Place">
+                    <option style="background-color: #808080; color: white;">Select</option>
+                    <option>Office - Lengkong Karya</option>
+                    <option>Outside</option>
+                    <option>Work From Home</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Address</strong>
-                <input type="text" class="form-control" name="address" placeholder="Adress" />
+                <strong>Waktu</strong>
+                <input type="time" class="form-control" name="waktu" placeholder="" />
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Aktivitas</strong>
+                <input type="text" name="aktivitas" class="form-control" placeholder="Activity">
             </div>
         </div>
        

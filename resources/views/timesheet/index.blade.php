@@ -57,5 +57,5 @@
         @endforeach
     </table>
 </div>
-    {!! $timesheet->links() !!}
+    
 @endsection
