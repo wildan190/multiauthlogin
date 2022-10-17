@@ -24,6 +24,7 @@
     <thead class="thead-dark">
         <tr>
             <th width="20px" class="text-center">No</th>
+            <th>Name</th>
             <th>Tanggal</th>
             <th>Proyek</th>
             <th>Tempat Kerja</th>
@@ -34,13 +35,14 @@
     </thead>
         @foreach ($timesheet as $timesheet)
         <tr>
-            <th class="text-center">{{ ++$i }}</th>
-            <th>{{ $timesheet->tanggal }}</th>
-            <th>{{ $timesheet->proyek }}</th>
-            <th>{{ $timesheet->tempat_kerja }}</th>
-            <th>{{ $timesheet->waktu }}</th>
-            <th>{{ $timesheet->aktivitas }}</th>
-            <th class="text-center">
+            <td class="text-center">{{ ++$i }}</td>
+            <td>{{ $timesheet->tanggal }}</td>
+            <td>{{ $timesheet->tanggal }}</td>
+            <td>{{ $timesheet->proyek }}</td>
+            <td>{{ $timesheet->tempat_kerja }}</td>
+            <td>{{ $timesheet->waktu }}</td>
+            <td>{{ $timesheet->aktivitas }}</td>
+            <td class="text-center">
                 <form action="{{ route('timesheet.destroy',$timesheet->id) }}" method="POST">
  
                     <a class="btn btn-info btn-sm" href="{{ route('timesheet.show',$timesheet->id) }}">Show</a>

@@ -15,6 +15,7 @@ class CreateTimesheetTable extends Migration
     {
         Schema::create('timesheets', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
             $table->string('tanggal');
             $table->string('proyek');
             $table->string('tempat_kerja');
@@ -31,6 +32,7 @@ class CreateTimesheetTable extends Migration
      */
     public function down()
     {
+        
         Schema::dropIfExists('timesheet');
     }
 }

@@ -28,6 +28,7 @@ class TimesheetController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
+            'nama' => 'required',
             'tanggal' => 'required',
             'proyek' => 'required',
             'tempat_kerja' => 'required',
@@ -64,6 +65,7 @@ class TimesheetController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
+            'nama' => 'required',
             'tanggal' => 'required',
             'proyek' => 'required',
             'tempat_kerja' => 'required',
