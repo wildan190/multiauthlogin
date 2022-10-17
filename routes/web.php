@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\usrPostController;
+use App\Http\Controllers\TimesheetController;
 use Illuminate\Support\Facades\Auth;
 Route::resource('posts', PostController::class);
 Route::resource('usrposts', usrPostController::class);
@@ -32,6 +33,9 @@ Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create',[PostController::class,'create'])->name('posts.create');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('create',[TimesheetController::class,'create'])->name('timesheet.create');
 
 
 Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
