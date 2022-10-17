@@ -32,12 +32,12 @@
             <th width="280px"class="text-center">Action</th>
         </tr>
     </thead>
-        @foreach ($timesheets as $timesheet)
+        @foreach ($timesheet as $timesheet)
         <tr>
             <td class="text-center">{{ ++$i }}</td>
             <td>{{ $timesheet->tanggal }}</td>
             <td>{{ $timesheet->proyek }}</td>
-            <td>{{ $timeshet->tempat_kerja }}</td>
+            <td>{{ $timesheet->tempat_kerja }}</td>
             <td>{{ $timesheet->waktu }}</td>
             <td>{{ $timesheet->aktivitas }}</td>
             <td class="text-center">

@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\timesheet;
 
-class usrPostController extends Controller
+class TimesheetController extends Controller
 {
     public function index()
     {
         /// mengambil data terakhir dan pagination 5 list
-        $usrposts = timesheet::latest()->paginate(5);
+        $timesheet = timesheet::latest()->paginate(5);
          
         /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
         /// include dengan number index
@@ -44,7 +44,7 @@ class usrPostController extends Controller
                         ->with('success','Timesheet created successfully.');
     }
   
-    public function show(timesheet $post)
+    public function show(timesheet $timesheet)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
@@ -52,7 +52,7 @@ class usrPostController extends Controller
         return view('timesheet.show',compact('timesheet'));
     }
   
-    public function edit(timesheet $post)
+    public function edit(timesheet $timesheet)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih

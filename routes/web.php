@@ -10,6 +10,7 @@ use App\Http\Controllers\TimesheetController;
 use Illuminate\Support\Facades\Auth;
 Route::resource('posts', PostController::class);
 Route::resource('usrposts', usrPostController::class);
+Route::resource('timesheet', TimesheetController::class);
 
 /*
 |--------------------------------------------------------------------------
