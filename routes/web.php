@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 Route::resource('posts', PostController::class);
 Route::resource('usrposts', usrPostController::class);
 Route::resource('timesheet', TimesheetController::class);
+Route::get('/search', [timesheetController::class, 'search'])->name('search');
 
 /*
 |--------------------------------------------------------------------------

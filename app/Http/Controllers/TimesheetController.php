@@ -10,8 +10,8 @@ class TimesheetController extends Controller
     public function index()
     {
         /// mengambil data terakhir dan pagination 5 list
-        $timesheet = timesheet::latest()->paginate(5);
-         
+        $timesheet = timesheet::latest()->paginate(15);
+        
         /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
         /// include dengan number index
         return view('timesheet.index',compact('timesheet'))
@@ -75,7 +75,7 @@ class TimesheetController extends Controller
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
         $timesheet->update($request->all());
-         
+        
         /// setelah berhasil mengubah data
         return redirect()->route('timesheet.index')
                         ->with('success','Timesheet updated successfully');
@@ -88,5 +88,12 @@ class TimesheetController extends Controller
   
         return redirect()->route('timesheet.index')
                         ->with('success','Timesheet deleted successfully');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $timesheet = timesheet::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('timesheet.index', compact('timesheet'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }
