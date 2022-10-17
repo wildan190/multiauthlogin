@@ -41,11 +41,11 @@
             <td>{{ $timesheet->waktu }}</td>
             <td>{{ $timesheet->aktivitas }}</td>
             <td class="text-center">
-                <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
+                <form action="{{ route('timesheet.destroy',$timesheet->id) }}" method="POST">
  
-                    <a class="btn btn-info btn-sm" href="{{ route('posts.show',$post->id) }}">Show</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('timesheet.show',$timesheet->id) }}">Show</a>
  
-                    <a class="btn btn-primary btn-sm" href="{{ route('posts.edit',$post->id) }}">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('timesheet.edit',$timesheet->id) }}">Edit</a>
  
                     @csrf
                     @method('DELETE')
@@ -57,5 +57,5 @@
         @endforeach
     </table>
 </div>
-    {!! $timesheets->links() !!}
+    {!! $timesheet->links() !!}
 @endsection
