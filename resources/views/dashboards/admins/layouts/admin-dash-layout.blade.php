@@ -106,6 +106,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-money-bill"></i>
+                  <p>
+                    Accounting
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-warehouse"></i>
+                  <p>
+                    Inventory
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-biking"></i>
+                  <p>
+                    Leave
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-id-card-alt"></i>
+                  <p>
+                    Resignation
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('admin.profile')}}" class="nav-link {{ (request()->is('admin/profile*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
