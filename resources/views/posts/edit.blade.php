@@ -29,25 +29,25 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Client</strong>
-                <input type="text" name="cclient" class="form-control" placeholder="Client">
+                <input type="text" name="cclient" class="form-control" value="{{ $post->cclient }}" placeholder="Client">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Ads Type</strong>
-                <input type="text" class="form-control" name="adstype" placeholder="Ads Type"></textarea>
+                <input type="text" class="form-control" name="adstype" value="{{ $post->adstype }}" placeholder="Ads Type"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Size</strong>
-                <input type="text" class="form-control" name="size" placeholder="Size" />
+                <input type="text" class="form-control" name="size" value="{{ $post->size }}" placeholder="Size" />
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address</strong>
-                <input type="text" class="form-control" name="address" placeholder="Adress" />
+                <input type="text" class="form-control" name="address" value="{{ $post->address }}" placeholder="Adress" />
             </div>
         </div>
        

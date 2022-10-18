@@ -3,6 +3,10 @@
 
 @section('content')
 
-This is Admin Page!!!
+<center>
+    <h1>
+        DALAM TAHAP PENGEMBANGAN
+    </h1>
+</center>
 
 @endsection
