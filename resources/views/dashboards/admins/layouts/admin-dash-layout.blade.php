@@ -82,18 +82,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('posts.create')}}" class="nav-link {{ (request()->is('post/create*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-clipboard-list"></i>
-                  <p>
-                    Input Client Data
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{ route('posts.index')}}" class="nav-link {{ (request()->is('post/index*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-briefcase"></i>
                   <p>
-                    Show Client Data
+                    Client Data
                   </p>
                 </a>
               </li>
