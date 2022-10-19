@@ -7,10 +7,12 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\usrPostController;
 use App\Http\Controllers\TimesheetController;
+use App\Http\Controllers\usrtimesheetController;
 use Illuminate\Support\Facades\Auth;
 Route::resource('posts', PostController::class);
 Route::resource('usrposts', usrPostController::class);
 Route::resource('timesheet', TimesheetController::class);
+Route::resource('usrtimesheet', usrtimesheetController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 
 /*
@@ -38,6 +40,7 @@ Route::get('create',[PostController::class,'create'])->name('posts.create');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create',[TimesheetController::class,'create'])->name('timesheet.create');
+
 
 
 Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHistory']], function(){
