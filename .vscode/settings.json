@@ -4,4 +4,9 @@
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "window.zoomLevel": 0.5,
     "terminal.integrated.fontSize": 15,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+    }
 }
