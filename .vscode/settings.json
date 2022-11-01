@@ -1,6 +1,7 @@
 {
     "editor.fontSize": 14,
-    "workbench.colorTheme": "Noctis Minimus",
+    "window.zoomLevel": 0.1,
+    "workbench.colorTheme": "Visual Studio Light",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "terminal.integrated.fontSize": 12,
     "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -48,7 +48,7 @@ margin-top: 5px;
 <!--button start -->
 <table class="table1">
     <tr>
-        <th><a class="btn btn-success btn-sm" href="#">+ Add</a></th>
+        <th><a class="btn btn-success btn-sm" href="{{ route('inventory.create') }}">+ Add</a></th>
     </tr>
 </table>
 <table class="table2">
