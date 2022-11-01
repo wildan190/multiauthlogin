@@ -88,7 +88,7 @@ today{
         <th>Status</th>
         <th>Action By</th>
         <th>Action Date</th>
-        <th width="280px"class="text-center">Action</th>
+        <th width="280px"class="text-center">Option</th>
 
     </tr>
     @foreach ($leave as $leave)
@@ -110,7 +110,7 @@ today{
 
                     <a class="btn btn-info btn-sm" href="{{ route('leave.show',$leave->id) }}">Show</a>
  
-                    <a class="btn btn-primary btn-sm" href="{{ route('leave.edit',$leave->id) }}">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('leave.edit',$leave->id) }}">Action</a>
                     
  
                     @csrf

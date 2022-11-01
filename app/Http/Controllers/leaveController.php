@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\leave;
+use App\Models\User;
 
 class leaveController extends Controller
 {
@@ -39,9 +40,7 @@ class leaveController extends Controller
             'from_date' => 'required',
             'to_date' => 'required',
             'days' => 'required',
-            'action_by' => 'required',
             'action_date' => 'required',
-            'approval' => 'optional',
         ]);
          
         /// insert setiap request dari form ke dalam database via model
@@ -74,14 +73,14 @@ class leaveController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'employee' => 'required',
+            'employee' => 'nullable',
             'leave_type' => 'required',
-            'from_date' => 'required',
-            'to_date' => 'required',
-            'days' => 'required',
+            'from_date' => 'nullable',
+            'to_date' => 'nullable',
+            'days' => 'nullable',
             'action_by' => 'required',
-            'action_date' => 'required',
-            'approval' => 'optional',
+            'action_date' => 'nullable',
+            'status' => 'required',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
@@ -107,4 +106,11 @@ class leaveController extends Controller
         $leave = leave::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
         return view('leave.index', compact('leave'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    /*public function pilih(Request $request)
+    {
+        $keyword = $request->search;
+        $user = User::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('leave.index', compact('leave'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }*/
 }
