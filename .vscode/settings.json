@@ -1,8 +1,8 @@
 {
-    "editor.fontSize": 17,
+    "editor.fontSize": 14,
     "workbench.colorTheme": "Noctis Minimus",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 12,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -33,6 +33,7 @@ class TimesheetController extends Controller
             'proyek' => 'required',
             'tempat_kerja' => 'required',
             'waktu' => 'required',
+            'waktu_out' => 'required',
             'aktivitas' => 'required',
         ]);
          
@@ -70,6 +71,7 @@ class TimesheetController extends Controller
             'proyek' => 'required',
             'tempat_kerja' => 'required',
             'waktu' => 'required',
+            'waktu_out' => 'required',
             'aktivitas' => 'required',
         ]);
          

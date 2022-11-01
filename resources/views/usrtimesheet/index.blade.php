@@ -39,7 +39,8 @@
             <th>Tanggal</th>
             <th>Proyek</th>
             <th>Tempat Kerja</th>
-            <th>Waktu</th>
+            <th>Waktu Masuk</th>
+            <th>Waktu Keluar</th>
             <th>Aktivitas</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
@@ -52,13 +53,14 @@
             <td>{{ $timesheet->proyek }}</td>
             <td>{{ $timesheet->tempat_kerja }}</td>
             <td>{{ $timesheet->waktu }}</td>
+            <td>{{ $timesheet->waktu_out }}</td>
             <td>{{ $timesheet->aktivitas }}</td>
             <td class="text-center">
                 <form action="{{ route('timesheet.destroy',$timesheet->id) }}" method="POST">
  
                     <a class="btn btn-info btn-sm" href="{{ route('timesheet.show',$timesheet->id) }}">Show</a>
  
-                    <a class="btn btn-primary btn-sm" href="{{ route('timesheet.edit',$timesheet->id) }}">Edit</a>
+                    <!--<a class="btn btn-primary btn-sm" href="{{ route('timesheet.edit',$timesheet->id) }}">Edit</a>-->
  
                     @csrf
                     @method('DELETE')

@@ -106,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+                <a href="{{ route('inventory.index')}}" class="nav-link {{ (request()->is('inventory/index*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-warehouse"></i>
                   <p>
                     Inventory
@@ -114,10 +114,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+                <a href="{{ route('leave.index')}}" class="nav-link {{ (request()->is('leave/index*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-biking"></i>
                   <p>
-                    Leave
+                    Leave Management
                   </p>
                 </a>
               </li>

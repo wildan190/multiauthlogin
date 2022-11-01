@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-<div class="row mt-0 mb-5">
+    <div class="row mt-0 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
                 <h2>Timesheet</h2>
@@ -12,6 +12,7 @@
                 <a class="btn btn-success" href="{{ route('timesheet.create') }}"> Add New</a>
             </div>
         </div>
+    </div>
 </div>
  
     @if ($message = Session::get('success'))
@@ -24,9 +25,10 @@
         <div class="form-group w-100 mb-3">
             <label for="search" class="d-block mr-2">Pencarian</label>
                 <select type="text" name="search" class="form-control w-75 d-inline" id="search">
+                    <option>Select User</option>
                     <option>Muhamad Asep Wildan Muholadun</option>
-                    <option>User 1</option>
-                    <option>Admin 1</option>
+                    <option>Chirfansyah</option>
+                    <option>Drajat Danu Wardana</option>
                 </select>
             <button type="submit" class="btn btn-primary mb-1">Cari</button>
         </div>
@@ -40,7 +42,8 @@
             <th>Tanggal</th>
             <th>Proyek</th>
             <th>Tempat Kerja</th>
-            <th>Waktu</th>
+            <th>Waktu Masuk</th>
+            <th>Waktu Keluar</th>
             <th>Aktivitas</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
@@ -53,6 +56,7 @@
             <td>{{ $timesheet->proyek }}</td>
             <td>{{ $timesheet->tempat_kerja }}</td>
             <td>{{ $timesheet->waktu }}</td>
+            <td>{{ $timesheet->waktu_out }}</td>
             <td>{{ $timesheet->aktivitas }}</td>
             <td class="text-center">
                 <form action="{{ route('timesheet.destroy',$timesheet->id) }}" method="POST">

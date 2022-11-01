@@ -9,6 +9,6 @@ class timesheet extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama', 'tanggal', 'proyek', 'tempat_kerja', 'waktu', 'aktivitas'
+        'nama', 'tanggal', 'proyek', 'tempat_kerja', 'waktu', 'waktu_out', 'aktivitas'
     ];
 }

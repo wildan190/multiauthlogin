@@ -1,7 +1,15 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
 @section('title','Add Record')
 @section('content')
-
+<style>
+    #form1{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 5px;
+        background-color:  #C6EBC5;
+        border-radius: 18px;
+        box-shadow:  inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    }
+</style>
  
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -14,7 +22,7 @@
     </div>
 @endif
 
-<form action="{{ route('timesheet.store') }}" method="POST">
+<form action="{{ route('timesheet.store') }}" method="POST" id="form1">
     @csrf
 
 <div class="container">
@@ -62,8 +70,14 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Waktu</strong>
+                <strong>Waktu Masuk</strong>
                 <input type="time" class="form-control" name="waktu" placeholder="" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Waktu Keluar</strong>
+                <input type="time" class="form-control" name="waktu_out" placeholder="" />
             </div>
         </div>
         <div class="col-sm">

@@ -20,6 +20,7 @@ class CreateTimesheetTable extends Migration
             $table->string('proyek');
             $table->string('tempat_kerja');
             $table->string('waktu');
+            $table->string('waktu_out');
             $table->string('aktivitas');
             $table->timestamps();
         });

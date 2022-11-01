@@ -50,8 +50,14 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Waktu</strong>
+                <strong>Waktu Masuk</strong>
                 <input type="time" class="form-control" name="waktu" placeholder="" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Waktu Keluar</strong>
+                <input type="time" class="form-control" name="waktu_out" placeholder="" />
             </div>
         </div>
         <div class="col-sm">

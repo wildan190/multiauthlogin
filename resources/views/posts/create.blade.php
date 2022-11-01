@@ -1,7 +1,15 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
 @section('title','Add Client')
 @section('content')
-
+<style>
+#form1{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 5px;
+        background-color:  #C6EBC5;
+        border-radius: 18px;
+        box-shadow:  inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    }
+    </style>
  
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -14,7 +22,7 @@
     </div>
 @endif
 
-<form action="{{ route('posts.store') }}" method="POST">
+<form action="{{ route('posts.store') }}" method="POST" id="form1">
     @csrf
 
 <div class="container">
