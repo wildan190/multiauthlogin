@@ -123,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('timesheet.index')}}" class="nav-link {{ (request()->is('timesheet/index*')) ? 'active' : '' }}">
+              <a href="{{ route('resignation.index')}}" class="nav-link {{ (request()->is('resignation/index*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-id-card-alt"></i>
                 <p>
                   Resignation

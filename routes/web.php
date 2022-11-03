@@ -10,6 +10,7 @@ use App\Http\Controllers\usrPostController;
 use App\Http\Controllers\TimesheetController;
 use App\Http\Controllers\usrtimesheetController;
 use App\Http\Controllers\leaveController;
+use App\Http\Controllers\ResignationController;
 use Illuminate\Support\Facades\Auth;
 
 Route::resource('posts', PostController::class);
@@ -18,6 +19,7 @@ Route::resource('timesheet', TimesheetController::class);
 Route::resource('usrtimesheet', usrtimesheetController::class);
 Route::resource('leave', leaveController::class);
 Route::resource('inventory', inventoryController::class);
+Route::resource('resignation', ResignationController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 Route::get('/search', [inventoryController::class, 'search'])->name('search');
 
@@ -56,6 +58,9 @@ Route::get('create', [leaveController::class, 'create'])->name('create.history')
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create', [inventoryController::class, 'create'])->name('inventory.create');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('create', [ResignationController::class, 'create'])->name('resignation.create');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('edit', [inventoryController::class, 'edit'])->name('inventory.edit');

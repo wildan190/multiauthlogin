@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Inventory extends Model
+class Resignation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'kd_barang', 'kategori', 'nama_barang', 'jml_barang', 'tgl_input', 'note'
+        'data1', 'data2', 'data3', 'data4'
     ];
 }

@@ -15,14 +15,12 @@ class CreateTableInventory extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->string('employee');
-            $table->string('leave_type');
-            $table->string('from_date');
-            $table->string('to_date');
-            $table->string('days');
-            $table->string('action_by');
-            $table->string('action_date');
-            $table->string('approval');
+            $table->string('kd_barang');
+            $table->string('kategori');
+            $table->string('nama_barang');
+            $table->string('jml_barang');
+            $table->string('tgl_input');
+            $table->string('note');
             $table->timestamps();
         });
     }

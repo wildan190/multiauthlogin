@@ -25,11 +25,6 @@ class InventoryController extends Controller
         return view('inventory.create');
     }
 
-    public function edit()
-    {
-        /// menampilkan halaman create
-        return view('inventory.edit');
-    }
 
     public function history()
     {
@@ -41,14 +36,12 @@ class InventoryController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'employee' => 'required',
-            'leave_type' => 'required',
-            'from_date' => 'required',
-            'to_date' => 'required',
-            'days' => 'required',
-            'action_by' => 'required',
-            'action_date' => 'required',
-            'approval' => 'optional',
+            'kd_barang' => 'required',
+            'kategori' => 'required',
+            'nama_barang' => 'required',
+            'jml_barang' => 'required',
+            'tgl_input' => 'required',
+            'note' => 'nullable',
         ]);
          
         /// insert setiap request dari form ke dalam database via model
@@ -69,7 +62,7 @@ class InventoryController extends Controller
     }
 
   
-    public function ubah(Inventory $inventory)
+    public function edit(Inventory $inventory)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
@@ -82,14 +75,12 @@ class InventoryController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'employee' => 'required',
-            'leave_type' => 'required',
-            'from_date' => 'required',
-            'to_date' => 'required',
-            'days' => 'required',
-            'action_by' => 'required',
-            'action_date' => 'required',
-            'approval' => 'optional',
+            'kd_barang' => 'required',
+            'kategori' => 'required',
+            'nama_barang' => 'required',
+            'jml_barang' => 'required',
+            'tgl_input' => 'required',
+            'note' => 'nullable',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
@@ -112,7 +103,7 @@ class InventoryController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->search;
-        $inventory = Inventory::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        $inventory = Inventory::where('nama_barang', 'like', "%" . $keyword . "%")->paginate(5);
         return view('inventory.index', compact('inventory'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }
