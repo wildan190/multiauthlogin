@@ -139,6 +139,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('about.index')}}" class="nav-link {{ (request()->is('about/index*')) ? 'active' : '' }}">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  About Developer
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('admin.settings')}}" class="nav-link {{ (request()->is('admin/settings*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-cog"></i>
                 <p>

@@ -81,50 +81,71 @@
 
 <!-- Form Pencarian -->
 <center>
-<form class="form" method="get" action="{{ route('search') }}">
-    <div class="form-group w-100 mb-3">
-        <label for="search" class="d-block mr-2">Pencarian</label>
-        <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Search...">
-        <button type="submit" class="btn btn-primary mb-1">Cari</button>
-    </div>
-</form>
+    <form class="form" method="get" action="{{ route('search') }}">
+                <div class="form-group">
+                    <label for="search" class="d-block mr-2">Filter</label>
+                    <input type="text" name="search" class="form-control w-25 d-inline-block" id="search" placeholder="Search...">
+                    <button type="submit" class="btn btn-primary mb-1">Search</button>
+                </div>
+    </form>
+    <form class="form" method="get" action="{{ route('filter') }}">
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="filter" class="d-block mr-2">Filter by Category</label>
+                    <select type="text" name="search" class="form-control w-25 d-inline-block" id="filter">
+                        <option>Category 1</option>
+                        <option>Category 2</option>
+                        <option>Category 3</option>
+                        <option>Category 4</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary mb-1">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </center>
+<!-- Akhir Form Pencarian -->
 
-<form action="{{ route('leave.store') }}" method="POST" class="form1">
-<table class="table4" cellpadding="30">
-    <tr class="tr1">
-        <th>Id</th>
-        <th>Kategori</th>
-        <th>Nama Barang</th>
-        <th>Jumlah Barang</th>
-        <th>Tanggal Input</th>
-        <th>Note</th>
-        <th width="280px" class="text-center">Action</th>
-    </tr>
-    @foreach ($inventory as $inventory)
-    <tr>
-        <td>{{$inventory->kd_barang}}</td>
-        <td>{{$inventory->kategori}}</td>
-        <td>{{$inventory->nama_barang}}</td>
-        <td>{{$inventory->jml_barang}}</td>
-        <td>{{$inventory->tgl_input}}</td>
-        <td>{{$inventory->note}}</td>
-        <td class="text-center">
-            <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
+<form action="{{ route('inventory.store') }}" method="POST" class="form1">
+    <table class="table4" cellpadding="30">
+        <tr class="tr1">
+            <th width="20px" class="text-center">No</th>
+            <th>ID Barang</th>
+            <th>Kategori</th>
+            <th>Nama Barang</th>
+            <th>Jumlah Barang</th>
+            <th>Tanggal Input</th>
+            <th>Note</th>
+            <th width="280px" class="text-center">Action</th>
+        </tr>
+        @foreach ($inventory as $inventory)
+        <tr>
+            <td class="text-center">{{ ++$i }}</td>
+            <td>{{$inventory->kd_barang}}</td>
+            <td>{{$inventory->kategori}}</td>
+            <td>{{$inventory->nama_barang}}</td>
+            <td>{{$inventory->jml_barang}}</td>
+            <td>{{$inventory->tgl_input}}</td>
+            <td>{{$inventory->note}}</td>
+            <td class="text-center">
 
-                <a class="btn btn-info btn-sm" href="{{ route('inventory.show',$inventory->id) }}">Show</a>
+                <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
 
-                <a class="btn btn-primary btn-sm" href="{{ route('inventory.edit',$inventory->id) }}">Edit</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('inventory.show',$inventory->id) }}">Show</a>
 
-                @csrf
-                @method('DELETE')
+                    <a class="btn btn-primary btn-sm" href="{{ route('inventory.edit',$inventory->id) }}">Action</a>
 
-                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
-</table>
+
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
 </form>
 
 

@@ -11,6 +11,7 @@ use App\Http\Controllers\TimesheetController;
 use App\Http\Controllers\usrtimesheetController;
 use App\Http\Controllers\leaveController;
 use App\Http\Controllers\ResignationController;
+use App\Http\Controllers\aboutController;
 use Illuminate\Support\Facades\Auth;
 
 Route::resource('posts', PostController::class);
@@ -20,8 +21,10 @@ Route::resource('usrtimesheet', usrtimesheetController::class);
 Route::resource('leave', leaveController::class);
 Route::resource('inventory', inventoryController::class);
 Route::resource('resignation', ResignationController::class);
+Route::resource('about', aboutController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 Route::get('/search', [inventoryController::class, 'search'])->name('search');
+Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
 
 
 /*
@@ -57,13 +60,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('create', [leaveController::class, 'create'])->name('create.history');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('create', [inventoryController::class, 'create'])->name('inventory.create');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create', [ResignationController::class, 'create'])->name('resignation.create');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('edit', [inventoryController::class, 'edit'])->name('inventory.edit');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventBackHistory']], function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');

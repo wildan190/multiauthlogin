@@ -1,6 +1,7 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
 @section('title','leavemanagement')
 @section('content')
+
 @if ($errors->any())
 <div class="alert alert-danger">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>

@@ -41,43 +41,43 @@
 </style>
 <form action="{{ route('inventory.store') }}" method="POST" class="form1">
     @csrf
-    <h4 class="headline">Add Barang</h4>
+    <h4 class="headline">Add Catalogue</h4>
     <div class="body2">
         <a class="btn btn-primary btn-sm" id="button1" href="">Back</a>
 
         <div class="col-sm">
             <div class="form-group">
-                <strong>Id Number</strong>
+                <strong>Id Item</strong>
                 <input type="text" name="kd_barang" class="form-control" placeholder="Id Number">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
-                <strong>Kategori</strong>
-                <input type="text" name="kategori" class="form-control" placeholder="Kategori">
+                <strong>Category</strong>
+                <input type="text" name="kategori" class="form-control" placeholder="Category">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
-                <strong>Nama Barang</strong>
-                <input type="text" name="nama_barang" class="form-control" placeholder="Nama Barang">
+                <strong>Item Name</strong>
+                <input type="text" name="nama_barang" class="form-control" placeholder="Item Name">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
-                <strong>Jumlah Barang</strong>
-                <input type="text" name="jml_barang" class="form-control" placeholder="Jumlah Barang">
+                <strong>Amount Item</strong>
+                <input type="text" name="jml_barang" class="form-control" placeholder="Amount Item">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
-                <strong>Tanggal Input</strong>
-                <input type="date" name="tgl_input" class="form-control" placeholder="Tanggal Input">
+                <strong>Input Date</strong>
+                <input type="date" name="tgl_input" class="form-control" placeholder="Input Date">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
-                <strong>Note</strong>
+                <strong>Notes</strong>
                 <input type="text" name="note" class="form-control" placeholder="Note">
             </div>
         </div>

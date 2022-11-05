@@ -106,4 +106,11 @@ class InventoryController extends Controller
         $inventory = Inventory::where('nama_barang', 'like', "%" . $keyword . "%")->paginate(5);
         return view('inventory.index', compact('inventory'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function filter(Request $request)
+    {
+        $keyword = $request->search;
+        $inventory = Inventory::where('kategori', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('inventory.index', compact('inventory'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

@@ -1,20 +1,72 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
 @section('title','Inventory')
 @section('content')
-<a class="btn btn-primary btn-sm" id="button1" href="">Back</a>
 
+@if ($errors->any())
+<div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
+<form action="{{ route('inventory.update', $inventory->id) }}" method="POST" class="form1">
+    @csrf
+    @method('PUT')
+    <h4 class="headline">Add Barang</h4>
+    <div class="body2">
+        <a class="btn btn-primary btn-sm" id="button1" href="">Back</a>
 
-<form class="form" id="search" method="get" action="{{ route('search') }}">
-    <div class="form-group w-100 mb-3">
-        <label for="search" class="d-block mr-2">Pencarian</label>
-        <select type="text" name="search" class="form-control w-75 d-inline" id="search">
-            <option>Pilih id</option>
-            <option>0001</option>
-            <option>0002</option>
-            <option>0003</option>
-        </select>
-        <button type="submit" class="btn btn-primary mb-1">Update</button>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Id Item</strong>
+                <input type="text" name="kd_barang" value="{{ $inventory->kd_barang }}" class="form-control" placeholder="Id Number">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Category</strong>
+                <select type="text" name="kategori" value="{{ $inventory->kategori }}" class="form-control" placeholder="Kategori">
+                    <option>Category 1</option>
+                    <option>Category 2</option>
+                    <option>Category 3</option>
+                    <option>Category 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Item Name</strong>
+                <input type="text" name="nama_barang" value="{{ $inventory->nama_barang }}" class="form-control" placeholder="Nama Barang">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Amount Item</strong>
+                <input type="text" name="jml_barang" value="{{ $inventory->jml_barang }}" class="form-control" placeholder="Jumlah Barang">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Input Date</strong>
+                <input type="date" name="tgl_input" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <strong>Notes</strong>
+                <textarea type="text" name="note" value="{{ $inventory->note }}" class="form-control" placeholder="Note"></textarea>
+            </div>
+        </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    <button type="submit" class="btn btn-success" id="submit1">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
 </form>
+
 @endsection
