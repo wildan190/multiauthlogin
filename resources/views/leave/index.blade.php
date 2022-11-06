@@ -21,13 +21,6 @@ today{
        margin-left: 25px;
        background-color: #C6EBC5;
        text-align: left;
-      
-    
-   
-    
-   }
-   .p1{
-      
    }
    .b1{
        margin-left: 5px;
