@@ -15,10 +15,11 @@ class CreateTableResignation extends Migration
     {
         Schema::create('resignations', function (Blueprint $table) {
             $table->id();
-            $table->string('data1');
-            $table->string('data2');
-            $table->string('data3');
-            $table->string('data4');
+            $table->string('nama');
+            $table->string('reason');
+            $table->string('rate');
+            $table->string('long_learn');
+            $table->string('signature');
             $table->timestamps();
         });
     }

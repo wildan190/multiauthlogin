@@ -9,6 +9,6 @@ class Resignation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'data1', 'data2', 'data3', 'data4'
+        'nama', 'reason', 'rate', 'long_learn', 'signature'
     ];
 }

@@ -28,11 +28,11 @@ class ResignationController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'data1' => 'required',
-            'data2' => 'required',
-            'data3' => 'required',
-            'data4' => 'required',
-            'data5' => 'required',
+            'nama' => 'required',
+            'reason' => 'required',
+            'rate' => 'required',
+            'long_learn' => 'required',
+            'signature' => 'required',
         ]);
          
         /// insert setiap request dari form ke dalam database via model
@@ -64,11 +64,11 @@ class ResignationController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'data1' => 'required',
-            'data2' => 'required',
-            'data3' => 'required',
-            'data4' => 'required',
-            'data5' => 'required',
+            'nama' => 'required',
+            'reason' => 'required',
+            'rate' => 'required',
+            'long_learn' => 'required',
+            'signature' => 'required',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
