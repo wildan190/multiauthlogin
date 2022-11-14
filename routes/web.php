@@ -12,6 +12,10 @@ use App\Http\Controllers\usrtimesheetController;
 use App\Http\Controllers\leaveController;
 use App\Http\Controllers\ResignationController;
 use App\Http\Controllers\aboutController;
+use App\Http\Controllers\accountingController;
+use App\Http\Controllers\usrLeaveController;
+use App\Http\Controllers\usrResignationController;
+use App\Http\Controllers\usrInventoryController;
 use Illuminate\Support\Facades\Auth;
 
 Route::resource('posts', PostController::class);
@@ -22,9 +26,15 @@ Route::resource('leave', leaveController::class);
 Route::resource('inventory', inventoryController::class);
 Route::resource('resignation', ResignationController::class);
 Route::resource('about', aboutController::class);
+Route::resource('accounting', accountingController::class);
+Route::resource('usrleave', usrLeaveController::class);
+Route::resource('usrresignation', usrResignationController::class);
+Route::resource('usrinventory', usrInventoryController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 Route::get('/search', [inventoryController::class, 'search'])->name('search');
 Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
+Route::get('/search', [usrInventoryController::class, 'search'])->name('search');
+Route::get('/filter', [usrInventoryController::class, 'filter'])->name('filter');
 
 
 /*
@@ -61,6 +71,9 @@ Route::get('create', [leaveController::class, 'create'])->name('create.history')
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create', [ResignationController::class, 'create'])->name('resignation.create');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('create', [inventoryController::class, 'create'])->name('inventory.create');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth', 'PreventBackHistory']], function () {

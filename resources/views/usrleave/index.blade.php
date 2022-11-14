@@ -1,5 +1,5 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','leavemanagement')
+@extends('dashboards.users.layouts.user-dash-layout')
+@section('title','Leave')
 @section('content')
 <style>
 .today{
@@ -43,8 +43,8 @@
 @endif
 <h2 class="ml-1">Leave Management</h2>
  
- <button class="b1"><a href="{{ route('leave.create') }}">+ Add</a></button>
- <button class="b1"><a href="{{ route('leave.history') }}">Show History</a></button>
+ <button class="b1"><a href="{{ route('usrleave.create') }}">+ Add</a></button>
+ <button class="b1"><a href="#">Show History</a></button>
  
  <h4 class="ml-1">On procces</h4>
 <!-- TABEL UTAMA -->
@@ -59,7 +59,7 @@
         <th width="280px"class="text-center">Option</th>
 
     </tr>
-    @foreach ($leave as $leave)
+    @foreach ($usrleave as $leave)
     <tr>
         <td class="text-center">{{ ++$i }}</td>
         <td class="paragraph"><p>
@@ -75,11 +75,6 @@
         <td class="text-center">
         
                 <form action="{{ route('leave.destroy',$leave->id) }}" method="POST">
-
-                    <a class="btn btn-info btn-sm" href="{{ route('leave.show',$leave->id) }}">Show</a>
- 
-                    <a class="btn btn-primary btn-sm" href="{{ route('leave.edit',$leave->id) }}">Action</a>
-                    
  
                     @csrf
                     @method('DELETE')

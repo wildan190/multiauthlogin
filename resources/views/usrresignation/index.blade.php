@@ -1,10 +1,6 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Resignation')
+@extends('dashboards.users.layouts.user-dash-layout')
+@section('title','Leave')
 @section('content')
-
-
-
-
 <style>
     .table1 {
         margin-left: 15px;
@@ -49,7 +45,7 @@
 @endif
 <table class="table1">
     <tr>
-        <th><a class="btn btn-success btn-sm" href="{{ route('resignation.create') }}">+ Add</a></th>
+        <th><a class="btn btn-success btn-sm" href="{{ route('usrresignation.create') }}">+ Add</a></th>
     </tr>
 </table>
 <center>
@@ -78,7 +74,7 @@
 
         </tr>
         </thead>
-        @foreach ($resignation as $resignation)
+        @foreach ($usrresignation as $resignation)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $resignation->nama }}</td>
@@ -91,7 +87,7 @@
 
                     <a hidden class="btn btn-info btn-sm" href="">Action</a>
 
-                    <a class="btn btn-primary btn-sm" href="{{ route('resignation.edit',$resignation->id) }}">Action</a>
+                    <a hidden class="btn btn-primary btn-sm" href="{{ route('resignation.edit',$resignation->id) }}">Action</a>
 
                     @csrf
                     @method('DELETE')

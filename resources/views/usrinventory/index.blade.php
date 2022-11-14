@@ -1,6 +1,7 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
+@extends('dashboards.users.layouts.user-dash-layout')
 @section('title','Inventory')
 @section('content')
+
 
 @if ($errors->any())
 <div class="alert alert-danger">
@@ -60,25 +61,30 @@
         background-color: #367E18;
         color: white;
     }
-    .pencarian{
+
+    .pencarian {
         display: inline-block;
         margin-left: -30px;
         margin-top: -30pxs;
     }
-    #submit1{
+
+    #submit1 {
         margin-left: 650px;
         margin-top: -105px;
     }
-    #filter{
-       
+
+    #filter {
+
         padding-right: 100px;
     }
-    #label1{
+
+    #label1 {
         margin-left: -130px;
         margin-bottom: -30px;
-       
+
     }
-    #search{
+
+    #search {
         margin-bottom: 20px;
     }
 </style>
@@ -93,7 +99,7 @@
 <!--button start -->
 <table class="table1">
     <tr>
-        <th><a class="btn btn-success btn-sm" href="{{ route('inventory.create') }}">+ Add</a></th>
+        <th><a class="btn btn-success btn-sm" href="{{ route('usrinventory.create') }}">+ Add</a></th>
     </tr>
 </table>
 <!--button end -->
@@ -102,67 +108,44 @@
 
 <!-- Form Pencarian -->
 <center>
-
-<!-- 
-<form class="form " method="get" action="{{ route('search') }} " id="search">
-                <div class="form-group ">
-                    <label for="search" class="d-block mr-2 ">Filter</label>
-                    <input type="text" name="search" class="form-control w-25 d-inline-block" id="search" placeholder="Search...">
-                    <button type="submit" class="btn btn-primary mb-1">Search</button>
-                </div>
+    <form class="form " method="get" action="{{ route('search') }} " id="search">
+        <div class="form-group ">
+            <label for="search" class="d-block mr-2 ">Filter</label>
+            <input type="text" name="search" class="form-control w-25 d-inline-block" id="search" placeholder="Search...">
+            <button type="submit" class="btn btn-primary mb-1">Search</button>
+        </div>
 
     </form>
-<table class="pencarian">
-    <tr>
-        <td>
-        <label class="d-block mr-0" id="label1">Filter by Category</label>
-<form class="form" method="get" action="{{ route('filter') }}">
-        <div class="row" >
-            <div class="col-sm">
-                <div class="form-group">
-                    
-                    <select type="text" name="search" class="form-control w-5 d-inline-block" id="filter">
-                        <option>Category 1</option>
-                        <option>Category 2</option>
-                        <option>Category 3</option>
-                        <option>Category 4</option>
-                    </select>
-                    
-                </div>
-            </div>
-        </div> 
-    </form>
-    </td>
-</tr>
-</table>
+</center>
+<center>
+    <table class="pencarian">
+        <tr>
+            <td>
+                <label class="d-block mr-0" id="label1">Filter by Category</label>
+                <form class="form" method="get" action="{{ route('filter') }}">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+
+                                <select type="text" name="search" class="form-control w-5 d-inline-block" id="filter">
+                                    <option>Category 1</option>
+                                    <option>Category 2</option>
+                                    <option>Category 3</option>
+                                    <option>Category 4</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
 </center>
 <button type="submit" class="btn btn-primary mb-1" id="submit1">Search</button>
--->
-<center>
-<form class="form " method="get" action="{{ route('search') }} " id="search">
-    <label for="search" class="d-block mr-2 ">Filter</label>
-            <div class="col-sm">
-                <div class="form-group">
-                    
-                    <select type="text" name="search" class="form-control w-5 d-inline-block" id="filter">
-                        <option>Bilboard</option>
-                        <option>Category 2</option>
-                        <option>Category 3</option>
-                        <option>Category 4</option>
-                    </select>
-                    
-                </div>
-            </div>
-                <div  class=" col">
-                        <input class="form-control" type="text" name="search"  placeholder="Search here..." />
-                </div>
-                    <div class="col">
-                        <button class="btn btn-success">Search</button>
-                    </div>
-</center>
 <!-- Akhir Form Pencarian -->
 
-<form action="{{ route('inventory.store') }}" method="POST" class="form1">
+<form action="{{ route('usrinventory.store') }}" method="POST" class="form1">
     <table class="table4" cellpadding=20">
         <tr class="tr1">
             <th width="20px" class="text-center">No</th>
@@ -174,7 +157,7 @@
             <th>Note</th>
             <th width="280px" class="text-center">Action</th>
         </tr>
-        @foreach ($inventory as $inventory)
+        @foreach ($usrinventory as $inventory)
         <tr>
             <td class="text-center">{{ ++$i }}</td>
             <td>{{$inventory->kd_barang}}</td>
@@ -187,9 +170,9 @@
 
                 <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
 
-                    <a class="btn btn-info btn-sm" href="{{ route('inventory.show',$inventory->id) }}">Show</a>
+                    <a class="btn btn-info btn-sm" hidden href="{{ route('inventory.show',$inventory->id) }}">Show</a>
 
-                    <a class="btn btn-primary btn-sm" href="{{ route('inventory.edit',$inventory->id) }}">Edit</a>
+                    <a class="btn btn-primary btn-sm" hidden href="{{ route('usrinventory.edit',$inventory->id) }}">Edit</a>
 
 
                     @csrf

@@ -4,31 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\leave;
-use App\Models\User;
 
-class leaveController extends Controller
+class usrLeaveController extends Controller
 {
     public function index()
     {
         /// mengambil data terakhir dan pagination 5 list
-        $leave = leave::latest()->paginate(15);
+        $usrleave = leave::latest()->paginate(15);
         
         /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
         /// include dengan number index
-        return view('leave.index',compact('leave'))
+        return view('usrleave.index',compact('usrleave'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
   
     public function create()
     {
         /// menampilkan halaman create
-        return view('leave.create');
+        return view('usrleave.create');
     }
 
     public function history()
     {
         /// menampilkan halaman history
-        return view('leave.history');
+        return view('usrleave.history');
     }
   
     public function store(Request $request)
@@ -40,8 +39,6 @@ class leaveController extends Controller
             'from_date' => 'required',
             'to_date' => 'required',
             'days' => 'required',
-            'status' => 'nullable',
-            'action_by' => 'nullable',
             'action_date' => 'required',
         ]);
          
@@ -50,7 +47,7 @@ class leaveController extends Controller
         leave::create($request->all());
          
         /// redirect jika sukses menyimpan data
-        return redirect()->route('leave.index')
+        return redirect()->route('usrleave.index')
                         ->with('success','Data created successfully.');
     }
   
@@ -59,7 +56,7 @@ class leaveController extends Controller
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('posts.show',$post->id) }}
-        return view('leave.show',compact('leave'));
+        return view('usrleave.show',compact('usrleave'));
     }
 
   
@@ -68,28 +65,28 @@ class leaveController extends Controller
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('posts.edit',$post->id) }}
-        return view('leave.edit',compact('leave'));
+        return view('usrleave.edit',compact('usrleave'));
     }
   
     public function update(Request $request, leave $leave)
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'employee' => 'required',
+            'employee' => 'nullable',
             'leave_type' => 'required',
-            'from_date' => 'required',
-            'to_date' => 'required',
-            'days' => 'required',
-            'status' => 'nullable',
-            'action_by' => 'nullable',
-            'action_date' => 'required',
+            'from_date' => 'nullable',
+            'to_date' => 'nullable',
+            'days' => 'nullable',
+            'action_by' => 'required',
+            'action_date' => 'nullable',
+            'status' => 'required',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
         $leave->update($request->all());
         
         /// setelah berhasil mengubah data
-        return redirect()->route('leave.index')
+        return redirect()->route('usrleave.index')
                         ->with('success','Data updated successfully');
     }
   
@@ -98,7 +95,7 @@ class leaveController extends Controller
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
         $leave->delete();
   
-        return redirect()->route('leave.index')
+        return redirect()->route('usrleave.index')
                         ->with('success','Record deleted successfully');
     }
 
@@ -106,13 +103,13 @@ class leaveController extends Controller
     {
         $keyword = $request->search;
         $leave = leave::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('leave.index', compact('leave'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('usrleave.index', compact('usrleave'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /*public function pilih(Request $request)
     {
         $keyword = $request->search;
         $user = User::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('leave.index', compact('leave'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('usrleave.index', compact('leave'))->with('i', (request()->input('page', 1) - 1) * 5);
     }*/
 }

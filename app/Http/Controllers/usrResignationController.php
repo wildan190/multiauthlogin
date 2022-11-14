@@ -3,25 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Resignation;
+use App\models\Resignation;
 
-class ResignationController extends Controller
+class usrResignationController extends Controller
 {
     public function index()
     {
         /// mengambil data terakhir dan pagination 5 list
-        $resignation = resignation::latest()->paginate(15);
+        $usrresignation = resignation::latest()->paginate(15);
         
         /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
         /// include dengan number index
-        return view('resignation.index',compact('resignation'))
+        return view('usrresignation.index',compact('usrresignation'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
   
     public function create()
     {
         /// menampilkan halaman create
-        return view('resignation.create');
+        return view('usrresignation.create');
     }
   
     public function store(Request $request)
@@ -39,7 +39,7 @@ class ResignationController extends Controller
         resignation::create($request->all());
          
         /// redirect jika sukses menyimpan data
-        return redirect()->route('resignation.index')
+        return redirect()->route('usrresignation.index')
                         ->with('success','resignation created successfully.');
     }
   
@@ -48,7 +48,7 @@ class ResignationController extends Controller
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('posts.show',$post->id) }}
-        return view('resignation.show',compact('resignation'));
+        return view('usrresignation.show',compact('usrresignation'));
     }
   
     public function edit(resignation $resignation)
@@ -56,7 +56,7 @@ class ResignationController extends Controller
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('posts.edit',$post->id) }}
-        return view('resignation.edit',compact('resignation'));
+        return view('usrresignation.edit',compact('usrresignation'));
     }
   
     public function update(Request $request, resignation $resignation)
@@ -74,7 +74,7 @@ class ResignationController extends Controller
         $resignation->update($request->all());
         
         /// setelah berhasil mengubah data
-        return redirect()->route('resignation.index')
+        return redirect()->route('usrresignation.index')
                         ->with('success','resignation updated successfully');
     }
   
@@ -83,7 +83,7 @@ class ResignationController extends Controller
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
         $resignation->delete();
   
-        return redirect()->route('resignation.index')
+        return redirect()->route('usrresignation.index')
                         ->with('success','resignation deleted successfully');
     }
 
@@ -91,6 +91,6 @@ class ResignationController extends Controller
     {
         $keyword = $request->search;
         $resignation = resignation::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('resignation.index', compact('resignation'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('usrresignation.index', compact('usrresignation'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

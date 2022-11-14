@@ -1,5 +1,5 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','leavemanagement')
+@extends('dashboards.users.layouts.user-dash-layout')
+@section('title','Leave')
 @section('content')
 <style>
     #button1 {
@@ -36,14 +36,14 @@
 </div>
 @endif
 
-<form action="{{ route('leave.store') }}" method="POST" class="form1">
+<form action="{{ route('usrleave.store') }}" method="POST" class="form1">
     @csrf
     <div class="body2">
         <div class="container">
             <div class="row md-5 mb-5">
                 <div class="col-lg-5 margin-top 0">
                     <div class="float-left">
-                        <a class="btn btn-primary btn-sm" id="button1" href="">Back</a>
+                        <a class="btn btn-primary btn-sm" id="button1" href="{{ 'index' }}">Back</a>
                         <h1 class="h1">Add Record Leave</h1>
                     </div>
                 </div>
@@ -90,21 +90,7 @@
                         <input type="date" name="action_date" class="form-control" placeholder="dd/mm/yy">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong hidden>Action</strong>
-                        <select type="text" hidden class="form-control" name="status" placeholder="">
-                            <option>Approve</option>
-                            <option>Reject</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="form-group">
-                        <strong hidden>Action By</strong>
-                        <input type="text" hidden name="action_by" class="form-control" placeholder="Action By">
-                    </div>
-                </div>
+
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-success" id="submit1">Submit</button>
                 </div>
@@ -115,5 +101,4 @@
 <script>
     alert("Dimohon untuk menginputkan data dengan baik dan benar");
 </script>
-
 @endsection

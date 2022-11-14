@@ -1,5 +1,5 @@
 @extends('dashboards.users.layouts.user-dash-layout')
-@section('title','View Client Data')
+@section('title','Client Data')
 @section('content')
 
 <div class="container">

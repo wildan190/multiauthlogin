@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableResignation extends Migration
+class CreateTableAccounting extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateTableResignation extends Migration
      */
     public function up()
     {
-        Schema::create('resignations', function (Blueprint $table) {
+        Schema::create('table_accounting', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('reason');
-            $table->string('rate');
-            $table->string('long_learn');
-            $table->string('status');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateTableResignation extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resignations');
+        Schema::dropIfExists('table_accounting');
     }
 }

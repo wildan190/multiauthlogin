@@ -3,25 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Resignation;
+//use App\Models\Accounting;
 
-class ResignationController extends Controller
+class accountingController extends Controller
 {
     public function index()
     {
+        return view('accounting.index');
+    }
+
+    public function create()
+    {
+        /// menampilkan halaman create
+        return view('accounting.create');
+    }
+
+
+    /*
+    public function index()
+    {
         /// mengambil data terakhir dan pagination 5 list
-        $resignation = resignation::latest()->paginate(15);
+        $accounting = accounting::latest()->paginate(15);
         
         /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
         /// include dengan number index
-        return view('resignation.index',compact('resignation'))
+        return view('accounting.index',compact('accounting'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
   
     public function create()
     {
         /// menampilkan halaman create
-        return view('resignation.create');
+        return view('accounting.create');
     }
   
     public function store(Request $request)
@@ -32,65 +45,66 @@ class ResignationController extends Controller
             'reason' => 'required',
             'rate' => 'required',
             'long_learn' => 'required',
+            'signature' => 'required',
         ]);
          
         /// insert setiap request dari form ke dalam database via model
         /// jika menggunakan metode ini, maka nama field dan nama form harus sama
-        resignation::create($request->all());
+        accounting::create($request->all());
          
         /// redirect jika sukses menyimpan data
-        return redirect()->route('resignation.index')
-                        ->with('success','resignation created successfully.');
+        return redirect()->route('accounting.index')
+                        ->with('success','accounting created successfully.');
     }
   
-    public function show(resignation $resignation)
+    public function show(accounting $accounting)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('posts.show',$post->id) }}
-        return view('resignation.show',compact('resignation'));
+        return view('accounting.show',compact('accounting'));
     }
   
-    public function edit(resignation $resignation)
+    public function edit(accounting $accounting)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('posts.edit',$post->id) }}
-        return view('resignation.edit',compact('resignation'));
+        return view('accounting.edit',compact('accounting'));
     }
   
-    public function update(Request $request, resignation $resignation)
+    public function update(Request $request, accounting $accounting)
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'nama' => 'nullable',
-            'reason' => 'nullable',
-            'rate' => 'nullable',
-            'long_learn' => 'nullable',
-            'status' => 'required',
+            'nama' => 'required',
+            'reason' => 'required',
+            'rate' => 'required',
+            'long_learn' => 'required',
+            'signature' => 'required',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $resignation->update($request->all());
+        $accounting->update($request->all());
         
         /// setelah berhasil mengubah data
-        return redirect()->route('resignation.index')
-                        ->with('success','resignation updated successfully');
+        return redirect()->route('accounting.index')
+                        ->with('success','accounting updated successfully');
     }
   
-    public function destroy(resignation $resignation)
+    public function destroy(accounting $accounting)
     {
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
-        $resignation->delete();
+        $accounting->delete();
   
-        return redirect()->route('resignation.index')
-                        ->with('success','resignation deleted successfully');
+        return redirect()->route('accounting.index')
+                        ->with('success','accounting deleted successfully');
     }
 
     public function search(Request $request)
     {
         $keyword = $request->search;
-        $resignation = resignation::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('resignation.index', compact('resignation'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+        $accounting = accounting::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('accounting.index', compact('accounting'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }*/
 }

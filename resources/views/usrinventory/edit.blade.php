@@ -1,6 +1,7 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Inventory')
+@extends('dashboards.users.layouts.user-dash-layout')
+@section('title','Inventories')
 @section('content')
+
 <style>
     .headline{
         margin-left: 5px;
@@ -22,7 +23,7 @@
 </div>
 @endif
 
-<form action="{{ route('inventory.update', $inventory->id) }}" method="POST" class="form1">
+<form action="{{ route('usrinventory.update', $inventory->id) }}" method="POST" class="form1">
     @csrf
     @method('PUT')
     <h4 class="headline">Edit Barang</h4>

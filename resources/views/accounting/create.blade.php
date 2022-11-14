@@ -1,5 +1,5 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','leavemanagement')
+@section('title','Accounting')
 @section('content')
 <style>
     #button1 {
@@ -25,44 +25,36 @@
     }
 </style>
 
-@if ($errors->any())
-<div class="alert alert-danger">
-    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
-<form action="{{ route('leave.store') }}" method="POST" class="form1">
-    @csrf
     <div class="body2">
         <div class="container">
             <div class="row md-5 mb-5">
                 <div class="col-lg-5 margin-top 0">
                     <div class="float-left">
-                        <a class="btn btn-primary btn-sm" id="button1" href="">Back</a>
-                        <h1 class="h1">Add Record Leave</h1>
+                        <a class="btn btn-primary btn-sm" id="button1" href="{{ route('accounting.index') }}">Back</a>
+                        <h1 class="h1">Add Invoice</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm">
                     <div class="form-group">
-                        <strong>Employee</strong>
-                        <input type="text" name="employee" class="form-control" placeholder="Employee Name">
+                        <strong>Client ID</strong>
+                        <input type="text" name="client_id" class="form-control" placeholder="ID of Client">
+                    </div>
+                    <div class="form-group">
+                        <strong>Client Name</strong>
+                        <input type="text" name="client_name" class="form-control" placeholder="Name of Client">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Leave Type</strong>
+                        <strong>Item Category</strong>
                         <select type="text" class="form-control" name="leave_type" placeholder="">
                             <option style="background-color: #808080; color: white;">Select</option>
-                            <option>Vacation</option>
-                            <option>Other</option>
-                            <option>Other</option>
+                            <option>Billboard</option>
+                            <option>Audiotron</option>
+                            <option>Spanduk</option>
                         </select>
                     </div>
                 </div>
@@ -72,24 +64,7 @@
                         <input type="date" name="from_date" class="form-control" placeholder="dd/mm/yy">
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="form-group">
-                        <strong>To</strong>
-                        <input type="date" name="to_date" class="form-control" placeholder="dd/mm/yy">
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="form-group">
-                        <strong>Days</strong>
-                        <input type="date" name="days" class="form-control" placeholder="dd/mm/yy">
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="form-group">
-                        <strong>Action Date</strong>
-                        <input type="date" name="action_date" class="form-control" placeholder="dd/mm/yy">
-                    </div>
-                </div>
+                
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong hidden>Action</strong>

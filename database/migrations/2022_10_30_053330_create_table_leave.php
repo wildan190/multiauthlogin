@@ -20,8 +20,8 @@ class CreateTableLeave extends Migration
             $table->string("from_date");
             $table->string("to_date");
             $table->string("days");
-            $table->string("status");
-            $table->string("action_by");
+            $table->string("status")->nullable()->change;
+            $table->string("action_by")->nullable()->change;
             $table->string("action_date");
             $table->string("approval");
             $table->timestamps();
