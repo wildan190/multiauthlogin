@@ -1,7 +1,7 @@
 {
     "editor.fontSize": 14,
     "window.zoomLevel": 0.1,
-    "workbench.colorTheme": "Noctis Minimus",
+    "workbench.colorTheme": "Default Light+",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "terminal.integrated.fontSize": 12,
     "editor.defaultFormatter": "esbenp.prettier-vscode",

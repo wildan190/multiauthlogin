@@ -1,5 +1,5 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Dashboard')
+@section('title','About')
 @section('content')
 <style>
 .h6{

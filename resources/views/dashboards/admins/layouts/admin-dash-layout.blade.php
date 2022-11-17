@@ -146,6 +146,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
+            <!--<li class="nav-item">
+              <a href="{{ route('addnew.index')}}" class="nav-link {{ (request()->is('addnew/index*')) ? 'active' : '' }}">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Add New User
+                </p>
+              </a>
+            </li>-->
             <li class="nav-item">
               <a href="{{ route('admin.settings')}}" class="nav-link {{ (request()->is('admin/settings*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-cog"></i>

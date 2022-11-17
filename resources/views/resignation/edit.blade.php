@@ -12,7 +12,7 @@
     </ul>
 </div>
 @endif
-<a class="btn btn-primary btn-sm" id="button1"href="">Back</a>
+<a class="btn btn-primary btn-sm" id="button1"href="{{ route('resignation.index') }}">Back</a>
 <h4 class="headline">Resignation Form</h4>
 
 

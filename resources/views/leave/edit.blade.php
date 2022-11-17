@@ -21,8 +21,8 @@
             <div class="row md-5 mb-5">
                 <div class="col-lg-5 margin-top 0">
                     <div class="float-left">
-                        <a class="btn btn-primary btn-sm" id="button1" href="">Back</a>
-                        <h1 class="h1">Add Record Leave</h1>
+                        <a class="btn btn-primary btn-sm" id="button1" href="{{ route('leave.index') }}">Back</a>
+                        <h1 class="h1">Edit Record Leave</h1>
                     </div>
                 </div>
             </div>

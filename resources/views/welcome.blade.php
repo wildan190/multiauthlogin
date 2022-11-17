@@ -19,10 +19,15 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            #login{
+                margin-top: 50px;
+            }
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        
+       
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -38,7 +43,7 @@
                                                    
                         @endif
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline" id="login">Log in</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
@@ -46,7 +51,93 @@
                     @endauth
                 </div>
             @endif
+            <style>
+                .card-img-top{
+                    height: 100px;
+                    width: 250px;
+                }
+                .table1{
+                    border-radius: 10px;
+                    color: #000000;
+                    margin-left: -1%;
+                    background: rgb(0,0,0);
+                    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 0%, rgba(0,0,0,1) 100%);
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: justify;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                .table2{
+                    border-radius: 10px;
+                    margin-left: 5%;
+                    background: rgb(0,0,0);
+                    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 0%, rgba(0,0,0,1) 100%);
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: justify;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
 
+                }
+
+                .table3{
+                    border-radius: 10px;
+                    margin-left: 5%;
+                    background: rgb(0,0,0);
+                    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 0%, rgba(0,0,0,1) 100%);
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: justify;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            </style>
+<table class="table1">
+    <tr>
+        <td>
+        <div class="card" style="width: 18rem;">
+  <img src="https://i0.wp.com/windowsku.com/wp-content/uploads/2019/04/apa-itu-coding-header.jpg?resize=930%2C364&ssl=1" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Apa itu coding ?</h5>
+    <p class="card-text">Komputer merupakan benda canggih yang bisa melakukan banyak hal untuk membantu manusia. Dibalik kecanggihan tersebut, ada kode mesin yang hanya dimengerti oleh komputer sehingga komputer bisa melakukan sesuatu dengan atau tanpa komando dari manusia.</p>
+    <a href="https://windowsku.com/apa-itu-coding/" target="blank" class="btn btn-primary">Selengkapnya</a>
+  </div>
+</div>
+        </td>
+    </tr>
+</table>
+
+<table class="table2">
+    <tr>
+        <td>
+        <div class="card" style="width: 18rem;">
+  <img src="https://majapahit.id/thumbnail/2021/05/Apa-Itu-Artificial-Intelligence.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Apa itu Artificial Intellegence ?</h5>
+    <p class="card-text"> Artificial Intelligence ? Secara definisi, Artificial Intelligence (AI) atau kecerdasan buatan adalah tiruan dari kecerdasan yang dimiliki oleh manusia. Bedanya, jika AI dimodelkan dalam mesin serta program agar bisa berfikir seperti layaknya manusia.</p>
+    <a href="https://majapahit.id/blog/2021/05/19/apa-itu-artificial-intelligence/" target="blank" class="btn btn-primary">Selengkapnya</a>
+  </div>
+</div>
+        </td>
+    </tr>
+</table>
+
+<table class="table3">
+    <tr>
+        <td>
+        <div class="card" style="width: 18rem;">
+  <img src="https://ilmu.lpkn.id/wp-content/uploads/2021/04/Revolusi-Industri-4.0.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Apa itu revolusi industri ?</h5>
+    <p class="card-text">Revolusi Industri sendiri dapat diartikan perubahan besar dan mendasar terhadap yang dilakukan manusia dalam manajemen sumber daya manusia, alam dan memproduksi barang yang berdampak pada tatanan sosial, ekonomi, dan budaya masyarakat.</p>
+    <a href="https://ilmu.lpkn.id/2021/04/26/mengenal-revolusi-industri-era-society-5-0-jepang-negara-terdepan-dalam-kesiapan/" target="blank" class="btn btn-primary">Selengkapnya</a>
+  </div>
+</div>
+        </td>
+    </tr>
+</table>
             <!--<div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">

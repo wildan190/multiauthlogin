@@ -16,6 +16,7 @@ use App\Http\Controllers\accountingController;
 use App\Http\Controllers\usrLeaveController;
 use App\Http\Controllers\usrResignationController;
 use App\Http\Controllers\usrInventoryController;
+use App\Http\Controllers\addNewController;
 use Illuminate\Support\Facades\Auth;
 
 Route::resource('posts', PostController::class);
@@ -30,6 +31,7 @@ Route::resource('accounting', accountingController::class);
 Route::resource('usrleave', usrLeaveController::class);
 Route::resource('usrresignation', usrResignationController::class);
 Route::resource('usrinventory', usrInventoryController::class);
+Route::resource('addnew', addNewController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 Route::get('/search', [inventoryController::class, 'search'])->name('search');
 Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
