@@ -1,6 +1,13 @@
 @extends('dashboards.users.layouts.user-dash-layout')
 @section('title','Resignation')
 @section('content')
+
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
+@endif
+
 <style>
     .table1 {
         margin-left: 15px;
@@ -31,76 +38,80 @@
     }
 </style>
 
-<h4 class="headline">Resignation List</h4>
-
-
-
-
-
-
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-    <p>{{ $message }}</p>
-</div>
-@endif
-<table class="table1">
-    <tr>
-        <th><a class="btn btn-success btn-sm" href="{{ route('usrresignation.create') }}">+ Add</a></th>
-    </tr>
-</table>
-<center>
-    <form class="form" method="get" action="{{ route('search') }} " id="search">
-        <div class="form-group">
-            <label for="search" class="d-block mr-2">Filter</label>
-            <input type="text" name="search" class="form-control w-25 d-inline-block" id="search" placeholder="Search...">
-            <button type="submit" class="btn btn-primary mb-1">Search</button>
+<div class="container">
+    <div class="row mt-0 mb-5">
+        <div class="col-lg-12 margin-tb">
+            <div class="float-left">
+                <h2>Resignation</h2>
+            </div>
+            <div class="float-right">
+                <a class="btn btn-success" href="{{ route('resignation.create') }}"> Add New</a>
+            </div>
         </div>
+    </div>
 
+    <form class="form" method="get" action="{{ route('pencariancarinama') }}">
+        <label>Filter by :</label>
+        <div class="input-group">
+            <input type="search" class="form-control form-control-lg" id="pencariancarinama" name="pencariancarinama" placeholder="Search By Name">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-lg btn-default">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <br />
     </form>
-</center>
 
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">DataTable</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Full Name</th>
+                        <th>Reason</th>
+                        <th>Rate Company</th>
+                        <th>Long Learned</th>
+                        <th>Status</th>
+                        <th class="text-center">Option</th>
 
-<center>
-    <table cellpadding="15" id="table2">
+                    </tr>
+                </thead>
+                @foreach ($usrresignation as $resignation)
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $resignation->nama }}</td>
+                    <td>{{ $resignation->reason }}</td>
+                    <td>{{ $resignation->rate }}</td>
+                    <td>{{ $resignation->long_learn }}</td>
+                    <td>{{ $resignation->status }}</td>
+                    <td class="text-center">
+                        <form action="{{ route('resignation.destroy',$resignation->id) }}" method="POST">
 
-        <tr class="tr1">
-            <th>No</th>
-            <th>Full Name</th>
-            <th>Reason</th>
-            <th>Rate Company</th>
-            <th>Long Learned</th>
-            <th>Status</th>
-            <th class="text-center">Option</th>
+                            <a hidden class="btn btn-info btn-sm" href="">Action</a>
 
-        </tr>
-        </thead>
-        @foreach ($usrresignation as $resignation)
-        <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $resignation->nama }}</td>
-            <td>{{ $resignation->reason }}</td>
-            <td>{{ $resignation->rate }}</td>
-            <td>{{ $resignation->long_learn }}</td>
-            <td>{{ $resignation->status }}</td>
-            <td class="text-center">
-                <form action="{{ route('resignation.destroy',$resignation->id) }}" method="POST">
+                            <a hidden class="btn btn-primary btn-sm" href="{{ route('resignation.edit',$resignation->id) }}">Action</a>
 
-                    <a hidden class="btn btn-info btn-sm" href="">Action</a>
+                            @csrf
+                            @method('DELETE')
 
-                    <a hidden class="btn btn-primary btn-sm" href="{{ route('resignation.edit',$resignation->id) }}">Action</a>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
+                        </form>
+                    </td>
 
-                    @csrf
-                    @method('DELETE')
+                </tr>
+                <tr></tr>
 
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
-                </form>
-            </td>
+                @endforeach
 
-        </tr>
-        <tr></tr>
+            </table>
+        </div>
+    </div>
+</div>
 
-        @endforeach
-
-    </table>
-</center>
 @endsection

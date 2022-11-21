@@ -14,6 +14,13 @@
 </div>
 @endif
 
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
+@endif
+
+<!--
 <style>
     .headline {
         margin-left: 10px;
@@ -88,103 +95,88 @@
         margin-bottom: 20px;
     }
 </style>
+-->
 
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-    <p>{{ $message }}</p>
-</div>
-@endif
 
-<h4 class="headline">Inventory Barang</h4>
-<!--button start -->
-<table class="table1">
-    <tr>
-        <th><a class="btn btn-success btn-sm" href="{{ route('usrinventory.create') }}">+ Add</a></th>
-    </tr>
-</table>
-<!--button end -->
 
-<a href="" class="link1">Export Report</a>
-
-<!-- Form Pencarian -->
-<center>
-    <form class="form " method="get" action="{{ route('search') }} " id="search">
-        <div class="form-group ">
-            <label for="search" class="d-block mr-2 ">Filter</label>
-            <input type="text" name="search" class="form-control w-25 d-inline-block" id="search" placeholder="Search...">
-            <button type="submit" class="btn btn-primary mb-1">Search</button>
+<div class="container">
+    <div class="row mt-0 mb-5">
+        <div class="col-lg-12 margin-tb">
+            <div class="float-left">
+                <h2>Inventory</h2>
+            </div>
+            <div class="float-right">
+                <a class="btn btn-success" href="{{ route('inventory.create') }}"> Add New</a>
+            </div>
         </div>
+    </div>
 
+    <!-- Form Pencarian -->
+    <form class="form" method="get" action="{{ route('pencarian') }}">
+        <label>Filter by :</label>
+        <div class="input-group">
+            <select type="text" class="form-control form-control-lg" id="pencarian" name="pencarian">
+                <option>Category 1</option>
+                <option>Category 2</option>
+                <option>Category 3</option>
+            </select>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-lg btn-default">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <br />
     </form>
-</center>
-<center>
-    <table class="pencarian">
-        <tr>
-            <td>
-                <label class="d-block mr-0" id="label1">Filter by Category</label>
-                <form class="form" method="get" action="{{ route('filter') }}">
-                    <div class="row">
-                        <div class="col-sm">
-                            <div class="form-group">
+    <!-- Akhir form pencarian -->
 
-                                <select type="text" name="search" class="form-control w-5 d-inline-block" id="filter">
-                                    <option>Category 1</option>
-                                    <option>Category 2</option>
-                                    <option>Category 3</option>
-                                    <option>Category 4</option>
-                                </select>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">DataTable with default features</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th width="20px" class="text-center">No</th>
+                        <th>ID Barang</th>
+                        <th>Kategori</th>
+                        <th>Nama Barang</th>
+                        <th>Jumlah Barang</th>
+                        <th>Tanggal Input</th>
+                        <th>Note</th>
+                        <th width="280px" class="text-center">Action</th>
+                    </tr>
+                    @foreach ($usrinventory as $inventory)
+                    <tr>
+                        <td class="text-center">{{ ++$i }}</td>
+                        <td>{{$inventory->kd_barang}}</td>
+                        <td>{{$inventory->kategori}}</td>
+                        <td>{{$inventory->nama_barang}}</td>
+                        <td>{{$inventory->jml_barang}}</td>
+                        <td>{{$inventory->tgl_input}}</td>
+                        <td>{{$inventory->note}}</td>
+                        <td class="text-center">
 
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </td>
-        </tr>
-    </table>
-</center>
-<button type="submit" class="btn btn-primary mb-1" id="submit1">Search</button>
-<!-- Akhir Form Pencarian -->
+                            <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
 
-<form action="{{ route('usrinventory.store') }}" method="POST" class="form1">
-    <table class="table4" cellpadding=20">
-        <tr class="tr1">
-            <th width="20px" class="text-center">No</th>
-            <th>ID Barang</th>
-            <th>Kategori</th>
-            <th>Nama Barang</th>
-            <th>Jumlah Barang</th>
-            <th>Tanggal Input</th>
-            <th>Note</th>
-            <th width="280px" class="text-center">Action</th>
-        </tr>
-        @foreach ($usrinventory as $inventory)
-        <tr>
-            <td class="text-center">{{ ++$i }}</td>
-            <td>{{$inventory->kd_barang}}</td>
-            <td>{{$inventory->kategori}}</td>
-            <td>{{$inventory->nama_barang}}</td>
-            <td>{{$inventory->jml_barang}}</td>
-            <td>{{$inventory->tgl_input}}</td>
-            <td>{{$inventory->note}}</td>
-            <td class="text-center">
+                                <a class="btn btn-info btn-sm" hidden href="{{ route('inventory.show',$inventory->id) }}">Show</a>
 
-                <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
-
-                    <a class="btn btn-info btn-sm" hidden href="{{ route('inventory.show',$inventory->id) }}">Show</a>
-
-                    <a class="btn btn-primary btn-sm" hidden href="{{ route('usrinventory.edit',$inventory->id) }}">Edit</a>
+                                <a class="btn btn-primary btn-sm" hidden href="{{ route('usrinventory.edit',$inventory->id) }}">Edit</a>
 
 
-                    @csrf
-                    @method('DELETE')
+                                @csrf
+                                @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-</form>
-
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+            </table>
+        </div>
+    </div>
+</div>
 
 @endsection

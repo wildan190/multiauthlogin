@@ -99,17 +99,10 @@ class usrInventoryController extends Controller
                         ->with('success','Record deleted successfully');
     }
 
-    public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $inventory = Inventory::where('nama_barang', 'like', "%" . $keyword . "%")->paginate(5);
-        return view('usrinventory.index', compact('usrinventory'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-
     public function pencarian(Request $request)
     {
-        $keyword = $request->search;
-        $inventory = Inventory::where('kategori', 'like', "%" . $keyword . "%")->paginate(5);
+        $keyword = $request->pencarian;
+        $usrinventory = Inventory::where('kategori', 'like', "%" . $keyword . "%")->paginate(5);
         return view('usrinventory.index', compact('usrinventory'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

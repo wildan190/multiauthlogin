@@ -87,10 +87,10 @@ class usrResignationController extends Controller
                         ->with('success','resignation deleted successfully');
     }
 
-    public function search(Request $request)
+    public function pencariancarinama(Request $request)
     {
-        $keyword = $request->search;
-        $resignation = resignation::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        $keyword = $request->pencariancarinama;
+        $usrresignation = resignation::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
         return view('usrresignation.index', compact('usrresignation'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

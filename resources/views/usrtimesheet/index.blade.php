@@ -19,17 +19,25 @@
     </div>
     @endif
 
+    <!-- Pencarian -->
     <form class="form" method="get" action="{{ route('finding') }}">
-        <div class="form-group w-100 mb-3">
-            <label for="search" class="d-block mr-2">Pencarian</label>
-                <select type="text" name="search" class="form-control w-75 d-inline" id="search">
-                    <option>Muhamad Asep Wildan Muholadun</option>
-                    <option>User 1</option>
-                    <option>Admin 1</option>
-                </select>
-            <button type="submit" class="btn btn-primary mb-1">Cari</button>
+    <label>Filter by :</label>
+        <div class="input-group">
+            <select type="text" class="form-control form-control-lg" id="finding" name="finding">
+                <option>Select User</option>
+                <option>Muhamad Asep Wildan Muholadun</option>
+                <option>Chirfansyah</option>
+                <option>Drajat Danu Wardana</option>
+            </select>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-lg btn-default">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
         </div>
+        <br />
     </form>
+    <!-- Akhir Pencarian -->
 
     <table class="table table-striped">
     <thead class="thead-dark">

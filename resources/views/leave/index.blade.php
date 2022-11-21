@@ -44,6 +44,7 @@
     <p>{{ $message }}</p>
 </div>
 @endif
+
 <div class="container">
     <div class="row mt-0 mb-5">
         <div class="col-lg-12 margin-tb">
@@ -56,7 +57,6 @@
     <button type="button" class="b1 btn-outline-success"><a href="{{ route('leave.create') }}">+ Add</a></button>
     <button class="b1"><a href="{{ route('leave.history') }}">Show History</a></button>
 
-    <h4 class="ml-1">On procces</h4>
     <!-- TABEL UTAMA -->
     <div class="card">
         <div class="card-header">

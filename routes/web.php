@@ -40,7 +40,7 @@ Route::get('/carikan', [inventoryController::class, 'carikan'])->name('carikan')
 Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
 Route::get('/pencarian', [usrInventoryController::class, 'pencarian'])->name('pencarian');
 Route::get('/carinama', [ResignationController::class, 'carinama'])->name('carinama');
-//Route::get('/filter', [usrInventoryController::class, 'filter'])->name('filter');
+Route::get('/pencariancarinama', [usrResignationController::class, 'pencariancarinama'])->name('pencariancarinama');
 
 
 /*
@@ -77,6 +77,7 @@ Route::get('create', [leaveController::class, 'create'])->name('create.history')
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create', [ResignationController::class, 'create'])->name('resignation.create');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create', [inventoryController::class, 'create'])->name('inventory.create');

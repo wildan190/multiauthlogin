@@ -108,6 +108,7 @@
         </div>
     </div>
 
+    <!-- Form Pencarian -->
     <form class="form" method="get" action="{{ route('filter') }}">
     <label>Filter by :</label>
         <div class="input-group">
@@ -124,6 +125,7 @@
         </div>
         <br />
     </form>
+    <!-- Akhir form pencarian -->
 
     <div class="card">
         <div class="card-header">

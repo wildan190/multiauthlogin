@@ -94,7 +94,7 @@ class usrtimesheetController extends Controller
 
     public function finding(Request $request)
     {
-        $keyword = $request->search;
+        $keyword = $request->finding;
         $usrtimesheet = timesheet::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
         return view('usrtimesheet.index', compact('usrtimesheet'))->with('i', (request()->input('page', 1) - 1) * 5);
     }

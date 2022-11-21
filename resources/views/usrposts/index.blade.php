@@ -44,5 +44,7 @@
                 @endforeach
             </table>
         </div>
-        {!! $usrposts->links() !!}
-        @endsection
+    </div>
+</div>
+{!! $usrposts->links() !!}
+@endsection
