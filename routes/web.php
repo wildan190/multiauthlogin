@@ -17,6 +17,7 @@ use App\Http\Controllers\usrLeaveController;
 use App\Http\Controllers\usrResignationController;
 use App\Http\Controllers\usrInventoryController;
 use App\Http\Controllers\addNewController;
+use App\Http\Controllers\usrAccountingController;
 use Illuminate\Support\Facades\Auth;
 
 Route::resource('posts', PostController::class);
@@ -31,12 +32,14 @@ Route::resource('accounting', accountingController::class);
 Route::resource('usrleave', usrLeaveController::class);
 Route::resource('usrresignation', usrResignationController::class);
 Route::resource('usrinventory', usrInventoryController::class);
+Route::resource('usraccounting', usrAccountingController::class);
 Route::resource('addnew', addNewController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 Route::get('/finding', [usrtimesheetController::class, 'finding'])->name('finding');
 Route::get('/carikan', [inventoryController::class, 'carikan'])->name('carikan');
 Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
 Route::get('/pencarian', [usrInventoryController::class, 'pencarian'])->name('pencarian');
+Route::get('/carinama', [ResignationController::class, 'carinama'])->name('carinama');
 //Route::get('/filter', [usrInventoryController::class, 'filter'])->name('filter');
 
 

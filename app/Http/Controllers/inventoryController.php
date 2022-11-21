@@ -102,14 +102,14 @@ class InventoryController extends Controller
 
     public function carikan(Request $request)
     {
-        $keyword = $request->search;
+        $keyword = $request->carikan;
         $inventory = Inventory::where('nama_barang', 'like', "%" . $keyword . "%")->paginate(5);
         return view('inventory.index', compact('inventory'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function filter(Request $request)
     {
-        $keyword = $request->search;
+        $keyword = $request->filter;
         $inventory = Inventory::where('kategori', 'like', "%" . $keyword . "%")->paginate(5);
         return view('inventory.index', compact('inventory'))->with('i', (request()->input('page', 1) - 1) * 5);
     }

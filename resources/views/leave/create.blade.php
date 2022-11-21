@@ -112,8 +112,5 @@
         </div>
     </div>
 </form>
-<script>
-    alert("Dimohon untuk menginputkan data dengan baik dan benar");
-</script>
 
 @endsection
