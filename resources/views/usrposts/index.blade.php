@@ -17,26 +17,32 @@
     </div>
     @endif
 
-    <table class="table table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th width="20px" class="text-center">No</th>
-                <th>Client Name</th>
-                <th>Ads Type</th>
-                <th>Size</th>
-                <th>Address</th>
-            </tr>
-        </thead>
-        @foreach ($usrposts as $post)
-        <tr>
-            <td class="text-center">{{ ++$i }}</td>
-            <td>{{ $post->cclient }}</td>
-            <td>{{ $post->adstype }}</td>
-            <td>{{ $post->size }}</td>
-            <td>{{ $post->address }}</td>
-        </tr>
-        @endforeach
-    </table>
-</div>
-{!! $usrposts->links() !!}
-@endsection
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">DataTable with default features</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th width="20px" class="text-center">No</th>
+                        <th>Client Name</th>
+                        <th>Ads Type</th>
+                        <th>Size</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                @foreach ($usrposts as $post)
+                <tr>
+                    <td class="text-center">{{ ++$i }}</td>
+                    <td>{{ $post->cclient }}</td>
+                    <td>{{ $post->adstype }}</td>
+                    <td>{{ $post->size }}</td>
+                    <td>{{ $post->address }}</td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+        {!! $usrposts->links() !!}
+        @endsection
