@@ -21,13 +21,7 @@
         margin-left: 10px;
     }
 
-    .form1 {}
-
-
     #table2 {
-
-
-
         color: black;
         background-color: #C6EBC5;
     }
