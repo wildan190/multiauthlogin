@@ -14,12 +14,15 @@
         </div>
     </div>
 
+    <!-- Pemberitahuan -->
     @if ($message = Session::get('success'))
     <div class="alert alert-success">
         <p>{{ $message }}</p>
     </div>
     @endif
+    <!-- Akhir Pemberitahuan -->
 
+    <!-- Pencarian -->
     <form class="form" method="get" action="{{ route('search') }}">
         <div class="input-group">
             <select type="text" class="form-control form-control-lg" id="search" name="search">
@@ -34,20 +37,11 @@
                 </button>
             </div>
         </div>
-
         <br />
-        <!--<div class="form-group w-100 mb-3">
-            <label for="search" class="d-block mr-2">Pencarian</label>
-            <select type="text" name="search" class="form-control w-75 d-inline" id="search">
-                <option>Select User</option>
-                <option>Muhamad Asep Wildan Muholadun</option>
-                <option>Chirfansyah</option>
-                <option>Drajat Danu Wardana</option>
-            </select>
-            <button type="submit" class="btn btn-primary mb-1">Cari</button>
-        </div>-->
     </form>
+    <!-- Akhir Pencarian -->
 
+    <!-- Tabel -->
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">DataTable with default features</h3>
@@ -95,6 +89,7 @@
                 @endforeach
             </table>
         </div>
+        <!-- Akhir Tabel -->
     </div>
 </div>
 
