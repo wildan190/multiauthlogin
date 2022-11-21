@@ -75,14 +75,14 @@ class leaveController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'employee' => 'required',
-            'leave_type' => 'required',
-            'from_date' => 'required',
-            'to_date' => 'required',
-            'days' => 'required',
+            'employee' => 'nullable',
+            'leave_type' => 'nullable',
+            'from_date' => 'nullable',
+            'to_date' => 'nullable',
+            'days' => 'nullable',
             'status' => 'nullable',
             'action_by' => 'nullable',
-            'action_date' => 'required',
+            'action_date' => 'nullable',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan

@@ -47,7 +47,7 @@
     <div class="row mt-0 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Timesheet</h2>
+                <h2>Leave Management</h2>
             </div>
         </div>
     </div>
