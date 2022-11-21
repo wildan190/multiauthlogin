@@ -18,6 +18,7 @@
     .b1 {
         margin-left: 5px;
         margin-bottom: 10px;
+        border-radius: 19px;
     }
 
     .tr1 {
@@ -51,8 +52,8 @@
             </div>
         </div>
     </div>
-
-    <button class="b1"><a href="{{ route('leave.create') }}">+ Add</a></button>
+    
+    <button type="button" class="b1 btn-outline-success"><a href="{{ route('leave.create') }}">+ Add</a></button>
     <button class="b1"><a href="{{ route('leave.history') }}">Show History</a></button>
 
     <h4 class="ml-1">On procces</h4>
