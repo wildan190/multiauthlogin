@@ -109,6 +109,7 @@
     </div>
 
     <form class="form" method="get" action="{{ route('filter') }}">
+    <label>Filter by :</label>
         <div class="input-group">
             <select type="text" class="form-control form-control-lg" id="filter" name="filter">
                 <option>Category 1</option>

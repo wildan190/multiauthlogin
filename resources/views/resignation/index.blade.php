@@ -46,6 +46,7 @@
     </div>
 
     <form class="form" method="get" action="{{ route('carinama') }}">
+    <label>Filter by :</label>
         <div class="input-group">
             <input type="search" class="form-control form-control-lg" id="carinama" name="carinama" placeholder="Search By Name">
             <div class="input-group-append">

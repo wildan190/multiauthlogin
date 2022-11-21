@@ -24,6 +24,7 @@
 
     <!-- Pencarian -->
     <form class="form" method="get" action="{{ route('search') }}">
+    <label>Filter by :</label>
         <div class="input-group">
             <select type="text" class="form-control form-control-lg" id="search" name="search">
                 <option>Select User</option>
