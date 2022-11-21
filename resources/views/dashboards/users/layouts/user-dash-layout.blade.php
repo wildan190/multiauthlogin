@@ -139,7 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
               <a href="{{ route('usrtimesheet.index')}}" class="nav-link {{ (request()->is('usrtimesheet/index*')) ? 'active' : '' }}">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="nav-icon fas fa-user-circle"></i>
                 <p>
                   Our Developers
                 </p>
