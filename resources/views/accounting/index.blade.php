@@ -34,15 +34,9 @@
     }
 </style>
 
-<section class="content">
-  <div class="row">
-    <div class="col-12">
-      <div class="card card-primary">
-        <div class="card-header">
-          <h3 class="card-title primary">Data Transaksi </h3>
-          <div class="card-tools">
-          </div>
 
+          <h3 >Data Transaksi </h3>
+          
 
    
     <table class="table1">
@@ -52,22 +46,24 @@
     </table>
 
 
-<center>
-    <table  cellpadding="15" id="table2">
-    <h1> Invoice </h1>
-            <tr class="tr1">
-                <th >Client ID</th>
-                <th>Client Name</th>
+    <table id="example3" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+            <th >Client ID</th>
                 <th>Date</th>
                 <th>Item Category</th>
                 <th>Amount</th>
-                <th  class="text-center">Action</th>
-                
+                <th>Debet</th>
+              <th>Kredit</th>
+              <th>Saldo</th>
+              <th>Action</th>
             </tr>
-        </thead>
-       
-        <tr>
+            </thead>
+
+            <tr>
             <td ></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -86,44 +82,6 @@
             </td>
             
         </tr>
-        <tr></tr>
-
-      
-
-    </table>
-    </center>
-    <table id="example3" class="table table-bordered table-hover">
-          <thead>
-            <tr>
-            <th >Client ID</th>
-                <th>Client Name</th>
-                <th>Date</th>
-                <th>Item Category</th>
-                <th>Amount</th>
-                <th>Debet</th>
-              <th>Kredit</th>
-              <th>Saldo</th>
-            </tr>
-            </thead>
+</table>
        
-       <tr>
-           <td ></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td class="text-center">
-               <form action="" method="POST">
-                   
-                   <a class="btn btn-info btn-sm" href="">Show</a>
-
-                   <a class="btn btn-primary btn-sm" href="">Edit</a>
-
-                
-
-                   <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
-               </form>
-           </td>
-           
-       </tr>
 @endsection

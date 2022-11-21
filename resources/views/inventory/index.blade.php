@@ -139,7 +139,7 @@
 <button type="submit" class="btn btn-primary mb-1" id="submit1">Search</button>
 -->
 <center>
-<form class="form " method="get" action="{{ route('search') }} " id="search">
+<form class="form " method="get" action="{{ route('carikan') }} " id="search">
     <label for="search" class="d-block mr-2 ">Filter</label>
             <div class="col-sm">
                 <div class="form-group">

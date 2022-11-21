@@ -33,10 +33,11 @@ Route::resource('usrresignation', usrResignationController::class);
 Route::resource('usrinventory', usrInventoryController::class);
 Route::resource('addnew', addNewController::class);
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
-Route::get('/search', [inventoryController::class, 'search'])->name('search');
+Route::get('/finding', [usrtimesheetController::class, 'finding'])->name('finding');
+Route::get('/carikan', [inventoryController::class, 'carikan'])->name('carikan');
 Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
-Route::get('/search', [usrInventoryController::class, 'search'])->name('search');
-Route::get('/filter', [usrInventoryController::class, 'filter'])->name('filter');
+Route::get('/pencarian', [usrInventoryController::class, 'pencarian'])->name('pencarian');
+//Route::get('/filter', [usrInventoryController::class, 'filter'])->name('filter');
 
 
 /*

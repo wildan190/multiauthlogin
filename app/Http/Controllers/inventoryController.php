@@ -100,7 +100,7 @@ class InventoryController extends Controller
                         ->with('success','Record deleted successfully');
     }
 
-    public function search(Request $request)
+    public function carikan(Request $request)
     {
         $keyword = $request->search;
         $inventory = Inventory::where('nama_barang', 'like', "%" . $keyword . "%")->paginate(5);

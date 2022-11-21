@@ -42,26 +42,34 @@
                         <strong>Client ID</strong>
                         <input type="text" name="client_id" class="form-control" placeholder="ID of Client">
                     </div>
+                <div class="col-sm">
                     <div class="form-group">
-                        <strong>Client Name</strong>
+                        <strong>Date</strong>
+                        <input type="date" name="from_date" class="form-control" placeholder="dd/mm/yy">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <strong>Item Category</strong>
                         <input type="text" name="client_name" class="form-control" placeholder="Name of Client">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                <div>
                     <div class="form-group">
-                        <strong>Item Category</strong>
-                        <select type="text" class="form-control" name="leave_type" placeholder="">
-                            <option style="background-color: #808080; color: white;">Select</option>
-                            <option>Billboard</option>
-                            <option>Audiotron</option>
-                            <option>Spanduk</option>
-                        </select>
+                        <strong>Amount</strong>
+                        <input type="number" class="form-control" name="amount" value="0" min="0">
                     </div>
                 </div>
-                <div class="col-sm">
+                <div>
                     <div class="form-group">
-                        <strong>From</strong>
-                        <input type="date" name="from_date" class="form-control" placeholder="dd/mm/yy">
+                        <strong>Debet</strong>
+                        <input type="number" class="form-control" name="debet" value="0" min="0">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <strong>Kredit</strong>
+                        <input type="number" class="form-control" name="kredit" value="0" min="0">
                     </div>
                 </div>
                 
@@ -87,8 +95,6 @@
         </div>
     </div>
 </form>
-<script>
-    alert("Dimohon untuk menginputkan data dengan baik dan benar");
-</script>
+
 
 @endsection

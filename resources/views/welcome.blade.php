@@ -61,7 +61,7 @@
                     color: #000000;
                     margin-left: -1%;
                     background: rgb(0,0,0);
-                    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 0%, rgba(0,0,0,1) 100%);
+                    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 16%);
                     font-family: Arial, Helvetica, sans-serif;
                     text-align: justify;
                     padding-left: 10px;
@@ -71,7 +71,7 @@
                     border-radius: 10px;
                     margin-left: 5%;
                     background: rgb(0,0,0);
-                    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 0%, rgba(0,0,0,1) 100%);
+                    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 16%);
                     font-family: Arial, Helvetica, sans-serif;
                     text-align: justify;
                     padding-left: 10px;
@@ -85,7 +85,7 @@
                     border-radius: 10px;
                     margin-left: 5%;
                     background: rgb(0,0,0);
-                    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 0%, rgba(0,0,0,1) 100%);
+                    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(190,190,222,1) 16%);
                     font-family: Arial, Helvetica, sans-serif;
                     text-align: justify;
                     padding-left: 10px;

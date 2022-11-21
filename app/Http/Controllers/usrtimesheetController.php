@@ -92,7 +92,7 @@ class usrtimesheetController extends Controller
                         ->with('success','Timesheet deleted successfully');
     }
 
-    public function search(Request $request)
+    public function finding(Request $request)
     {
         $keyword = $request->search;
         $usrtimesheet = timesheet::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
