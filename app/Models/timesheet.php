@@ -11,4 +11,8 @@ class timesheet extends Model
     protected $fillable = [
         'nama', 'tanggal', 'proyek', 'tempat_kerja', 'waktu', 'waktu_out', 'aktivitas'
     ];
+    
+    public function user(){
+        return $this->hasOne(User::class, 'id', 'nama');
+    }
 }

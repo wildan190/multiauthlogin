@@ -99,3 +99,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['isUser', 'auth', 'PreventBac
     Route::get('profile', [UserController::class, 'profile'])->name('user.profile');
     Route::get('settings', [UserController::class, 'settings'])->name('user.settings');
 });
+/*
+Route::group(['prefix' => 'accounting', 'middleware' => ['isAccounting', 'auth', 'PreventBackHistory']], function () {
+    Route::get('accounting', [accountingController::class, 'index'])->name('accounting.index');
+});*/

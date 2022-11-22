@@ -17,7 +17,7 @@
     <div class="col-sm">
             <div class="form-group">
                 <strong>Name</strong>
-                <input type="text" name="nama" class="form-control" placeholder="Name">
+                <input type="text" value="{{ Auth::user()->name }}" name="nama" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-sm">

@@ -36,6 +36,9 @@ class LoginController extends Controller
           elseif( Auth()->user() == 2){
               return route('user.dashboard');
           }
+          elseif( Auth()->user() == 3){
+            return route('accounting.index');
+          }
       }
 
 
@@ -63,6 +66,9 @@ class LoginController extends Controller
         }
         elseif( auth()->user()->role == 2 ){
             return redirect()->route('user.dashboard');
+        }
+        elseif( auth()->user()->role == 3 ){
+            return redirect()->route('accounting.index');
         }
 
        }else{

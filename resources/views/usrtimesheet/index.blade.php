@@ -24,10 +24,7 @@
     <label>Filter by :</label>
         <div class="input-group">
             <select type="text" class="form-control form-control-lg" id="finding" name="finding">
-                <option>Select User</option>
-                <option>Muhamad Asep Wildan Muholadun</option>
-                <option>Chirfansyah</option>
-                <option>Drajat Danu Wardana</option>
+                <option>{{ Auth::user()->name }}</option>
             </select>
             <div class="input-group-append">
                 <button type="submit" class="btn btn-lg btn-default">
@@ -68,7 +65,7 @@
  
                     <a class="btn btn-info btn-sm" href="{{ route('timesheet.show',$timesheet->id) }}">Show</a>
  
-                    <!--<a class="btn btn-primary btn-sm" href="{{ route('timesheet.edit',$timesheet->id) }}">Edit</a>-->
+                    <a class="btn btn-primary btn-sm" hidden href="{{ route('timesheet.edit',$timesheet->id) }}">Edit</a>
  
                     @csrf
                     @method('DELETE')
