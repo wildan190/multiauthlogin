@@ -72,7 +72,7 @@
                         <th>Rate Company</th>
                         <th>Long Learned</th>
                         <th>Status</th>
-                        <th class="text-center">Option</th>
+                        <!--<th class="text-center">Option</th>-->
 
                     </tr>
                 </thead>
@@ -84,7 +84,7 @@
                     <td>{{ $resignation->rate }}</td>
                     <td>{{ $resignation->long_learn }}</td>
                     <td>{{ $resignation->status }}</td>
-                    <td class="text-center">
+                    <!--<td class="text-center">
                         <form action="{{ route('resignation.destroy',$resignation->id) }}" method="POST">
 
                             <a hidden class="btn btn-info btn-sm" href="">Action</a>
@@ -94,12 +94,11 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
+                            <button type="submit" hidden class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
                         </form>
-                    </td>
+                    </td>-->
 
                 </tr>
-                <tr></tr>
 
                 @endforeach
 

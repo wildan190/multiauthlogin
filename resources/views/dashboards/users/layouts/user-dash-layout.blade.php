@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('usrresignation.index')}}" class="nav-link {{ (request()->is('usrtimesheet/index*')) ? 'active' : '' }}">
+              <a href="{{ route('usrresignation.index')}}" method="get" action="{{ route('pencariancarinama') }}" class="nav-link {{ (request()->is('usrtimesheet/index*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-id-card-alt"></i>
                 <p>
                   Resignation
@@ -134,22 +134,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   Profile
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ route('usrtimesheet.index')}}" class="nav-link {{ (request()->is('usrtimesheet/index*')) ? 'active' : '' }}">
-                <i class="nav-icon fas fa-user-circle"></i>
-                <p>
-                  Our Developers
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ route('user.settings')}}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
-                <i class="nav-icon fas fa-cog"></i>
-                <p>
-                  Settings
                 </p>
               </a>
             </li>

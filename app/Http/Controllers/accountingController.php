@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Accounting;
+use App\Models\Item;
 
 class accountingController extends Controller
 {
@@ -12,6 +13,7 @@ class accountingController extends Controller
     {
         /// mengambil data terakhir dan pagination 5 list
         $accounting = accounting::latest()->paginate(15);
+        $akuntan = item::latest()->paginate(15);
         
         /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
         /// include dengan number index
@@ -29,11 +31,6 @@ class accountingController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'nama_barang' => 'required',
-            'jumlah_barang' => 'required',
-            'harga_satuan' => 'required',
-            'total_harga' => 'required',
-            'catatan' => 'nullable',
             'tanggal' => 'required',
             'cash' => 'required',
             'tools' => 'required',
@@ -71,11 +68,6 @@ class accountingController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'nama_barang' => 'nullable',
-            'jumlah_barang' => 'nullable',
-            'harga_satuan' => 'nullable',
-            'total_harga' => 'nullable',
-            'catatan' => 'nullable',
             'tanggal' => 'nullable',
             'cash' => 'nullable',
             'tools' => 'nullable',
