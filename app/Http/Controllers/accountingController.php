@@ -29,6 +29,12 @@ class accountingController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
+            'nama_barang' => 'required',
+            'jumlah_barang' => 'required',
+            'harga_satuan' => 'required',
+            'total_harga' => 'required',
+            'catatan' => 'nullable',
+            'tanggal' => 'required',
             'cash' => 'required',
             'tools' => 'required',
             'equipment' => 'required',
@@ -65,6 +71,12 @@ class accountingController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
+            'nama_barang' => 'nullable',
+            'jumlah_barang' => 'nullable',
+            'harga_satuan' => 'nullable',
+            'total_harga' => 'nullable',
+            'catatan' => 'nullable',
+            'tanggal' => 'nullable',
             'cash' => 'nullable',
             'tools' => 'nullable',
             'equipment' => 'nullable',

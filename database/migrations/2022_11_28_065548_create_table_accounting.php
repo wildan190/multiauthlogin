@@ -15,10 +15,16 @@ class CreateTableAccounting extends Migration
     {
         Schema::create('accountings', function (Blueprint $table) {
             $table->id();
-            $table->string('cash');
-            $table->string('tools');
-            $table->string('equipment');
-            $table->string('debt');
+            $table->string('nama_barang');
+            $table->int('jumlah_barang');
+            $table->int('harga_satuan');
+            $table->int('total_harga');
+            $table->string('catatan');
+            $table->string('tanggal');
+            $table->int('cash');
+            $table->int('tools');
+            $table->int('equipment');
+            $table->int('debt');
             $table->string('details');
             $table->timestamps();
         });

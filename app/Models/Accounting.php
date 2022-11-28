@@ -9,6 +9,6 @@ class Accounting extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'cash', 'tools', 'equipment', 'debt', 'details'
+        'nama_barang','jumlah_barang', 'harga_satuan', 'total_harga', 'catatan','tanggal','cash', 'tools', 'equipment', 'debt', 'details'
     ];
 }
