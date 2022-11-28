@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Accounting extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cash', 'tools', 'equipment', 'debt', 'details'
+    ];
 }

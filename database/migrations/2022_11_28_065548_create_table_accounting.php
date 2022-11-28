@@ -13,8 +13,13 @@ class CreateTableAccounting extends Migration
      */
     public function up()
     {
-        Schema::create('table_accounting', function (Blueprint $table) {
+        Schema::create('accountings', function (Blueprint $table) {
             $table->id();
+            $table->string('cash');
+            $table->string('tools');
+            $table->string('equipment');
+            $table->string('debt');
+            $table->string('details');
             $table->timestamps();
         });
     }

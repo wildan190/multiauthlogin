@@ -98,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('accounting.index')}}" class="nav-link {{ (request()->is('accounting/index*')) ? 'active' : '' }}">
+              <a href="{{ route('usraccounting.index')}}" class="nav-link {{ (request()->is('usraccounting/index*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-money-bill"></i>
                 <p>
                   Accounting

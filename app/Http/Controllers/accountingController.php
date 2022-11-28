@@ -3,23 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Models\Accounting;
+use App\Models\Accounting;
 
 class accountingController extends Controller
 {
-    public function index()
-    {
-        return view('accounting.index');
-    }
 
-    public function create()
-    {
-        /// menampilkan halaman create
-        return view('accounting.create');
-    }
-
-
-    /*
     public function index()
     {
         /// mengambil data terakhir dan pagination 5 list
@@ -41,11 +29,11 @@ class accountingController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'nama' => 'required',
-            'reason' => 'required',
-            'rate' => 'required',
-            'long_learn' => 'required',
-            'signature' => 'required',
+            'cash' => 'required',
+            'tools' => 'required',
+            'equipment' => 'required',
+            'debt' => 'required',
+            'details' => 'required',
         ]);
          
         /// insert setiap request dari form ke dalam database via model
@@ -77,11 +65,11 @@ class accountingController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'nama' => 'required',
-            'reason' => 'required',
-            'rate' => 'required',
-            'long_learn' => 'required',
-            'signature' => 'required',
+            'cash' => 'nullable',
+            'tools' => 'nullable',
+            'equipment' => 'nullable',
+            'debt' => 'nullable',
+            'details' => 'nullable',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
@@ -101,7 +89,7 @@ class accountingController extends Controller
                         ->with('success','accounting deleted successfully');
     }
 
-    public function search(Request $request)
+    /*public function cari_data(Request $request)
     {
         $keyword = $request->search;
         $accounting = accounting::where('nama', 'like', "%" . $keyword . "%")->paginate(5);

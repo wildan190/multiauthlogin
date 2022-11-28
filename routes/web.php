@@ -67,6 +67,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('create', [PostController::class, 'create'])->name('posts.create');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('create', [accountingController::class, 'create'])->name('accounting.create');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('create', [TimesheetController::class, 'create'])->name('timesheet.create');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
