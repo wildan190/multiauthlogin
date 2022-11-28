@@ -47,7 +47,9 @@
     <form class="form" method="get" action="{{ route('pencariancarinama') }}">
         <label>Filter by :</label>
         <div class="input-group">
-            <input type="search" class="form-control form-control-lg" id="pencariancarinama" name="pencariancarinama" placeholder="Search By Name">
+            <select type="text" class="form-control form-control-lg" id="pencariancarinama" name="pencariancarinama" placeholder="Search By Name">
+                <option>{{ Auth::user()->name }}</option>
+            </select>
             <div class="input-group-append">
                 <button type="submit" class="btn btn-lg btn-default">
                     <i class="fa fa-search"></i>
