@@ -145,6 +145,7 @@
                         <th>Note</th>
                         <th width="280px" class="text-center">Action</th>
                     </tr>
+                </thead>
                     @foreach ($inventory as $inventory)
                     <tr>
                         <td class="text-center">{{ ++$i }}</td>
