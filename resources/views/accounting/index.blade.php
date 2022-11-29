@@ -9,7 +9,7 @@
                 <h2>Accounting</h2>
             </div>
             <div class="float-right">
-                <a class="btn btn-success" href="{{ route('timesheet.create') }}"> Add New</a>
+                <a class="btn btn-success" href="{{ route('accounting.create') }}"> Add New</a>
             </div>
         </div>
     </div>
@@ -22,7 +22,20 @@
     @endif
     <!-- Akhir Pemberitahuan -->
 
-
+    <!-- Pencarian -->
+    <form class="form" method="get" action="{{ route('cari_data') }}">
+        <label>Filter by date :</label>
+        <div class="input-group">
+            <input type="date" class="form-control form-control-lg" id="cari_data" name="cari_data">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-lg btn-default">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <br />
+    </form>
+    <!-- Akhir Pencarian -->
 
     <!-- Tabel -->
     <div class="card">

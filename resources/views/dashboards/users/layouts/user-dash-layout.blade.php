@@ -81,14 +81,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a href="{{ route('usrposts.index')}}" class="nav-link {{ (request()->is('usrpost/index*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-briefcase"></i>
                 <p>
                   Client Data
                 </p>
               </a>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a href="{{ route('usrtimesheet.index')}}" class="nav-link {{ (request()->is('usrtimesheet/index*')) ? 'active' : '' }}">
                 <i class="nav-icon fas fa-table"></i>

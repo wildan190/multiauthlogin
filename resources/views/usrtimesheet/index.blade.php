@@ -8,7 +8,7 @@
                 <h2>Timesheet</h2>
             </div>
             <div class="float-right">
-                <a class="btn btn-success" href="{{ route('usrtimesheet.create') }}"> Add New</a>
+                <a class="btn btn-success" href="{{ route('usrtimesheet.create') }}"> Add New Client</a>
             </div>
         </div>
 </div>

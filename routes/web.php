@@ -41,6 +41,7 @@ Route::get('/filter', [inventoryController::class, 'filter'])->name('filter');
 Route::get('/pencarian', [usrInventoryController::class, 'pencarian'])->name('pencarian');
 Route::get('/carinama', [ResignationController::class, 'carinama'])->name('carinama');
 Route::get('/pencariancarinama', [usrResignationController::class, 'pencariancarinama'])->name('pencariancarinama');
+Route::get('/cari_data', [accountingController::class, 'cari_data'])->name('cari_data');
 
 
 /*

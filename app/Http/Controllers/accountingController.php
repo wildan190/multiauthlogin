@@ -93,10 +93,10 @@ class accountingController extends Controller
                         ->with('success','accounting deleted successfully');
     }
 
-    /*public function cari_data(Request $request)
+    public function cari_data(Request $request)
     {
-        $keyword = $request->search;
-        $accounting = accounting::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        $keyword = $request->cari_data;
+        $accounting = accounting::where('tanggal', 'like', "%" . $keyword . "%")->paginate(5);
         return view('accounting.index', compact('accounting'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }*/
+    }
 }
