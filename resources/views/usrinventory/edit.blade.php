@@ -23,7 +23,7 @@
 </div>
 @endif
 
-<form action="{{ route('usrinventory.update', $inventory->id) }}" method="POST" class="form1">
+<form action="{{ route('usrinventory.update', $usrinventory->id) }}" method="POST" class="form1">
     @csrf
     @method('PUT')
     <h4 class="headline">Edit Barang</h4>
@@ -33,13 +33,13 @@
         <div class="col-sm">
             <div class="form-group">
                 <strong>Id Item</strong>
-                <input type="text" name="kd_barang" value="{{ $inventory->kd_barang }}" class="form-control" placeholder="Id Number">
+                <input type="text" name="kd_barang" value="{{ $usrinventory->kd_barang }}" class="form-control" placeholder="Id Number">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
                 <strong>Category</strong>
-                <select type="text" name="kategori" value="{{ $inventory->kategori }}" class="form-control" placeholder="Kategori">
+                <select type="text" name="kategori" value="{{ $usrinventory->kategori }}" class="form-control" placeholder="Kategori">
                     <option>Category 1</option>
                     <option>Category 2</option>
                     <option>Category 3</option>
@@ -50,13 +50,13 @@
         <div class="col-sm">
             <div class="form-group">
                 <strong>Item Name</strong>
-                <input type="text" name="nama_barang" value="{{ $inventory->nama_barang }}" class="form-control" placeholder="Nama Barang">
+                <input type="text" name="nama_barang" value="{{ $usrinventory->nama_barang }}" class="form-control" placeholder="Nama Barang">
             </div>
         </div>
         <div class="col-sm">
             <div class="form-group">
                 <strong>Amount Item</strong>
-                <input type="text" name="jml_barang" value="{{ $inventory->jml_barang }}" class="form-control" placeholder="Jumlah Barang">
+                <input type="text" name="jml_barang" value="{{ $usrinventory->jml_barang }}" class="form-control" placeholder="Jumlah Barang">
             </div>
         </div>
         <div class="col-sm">
@@ -68,7 +68,7 @@
         <div class="col-sm">
             <div class="form-group">
                 <strong>Notes</strong>
-                <textarea type="text" name="note" value="{{ $inventory->note }}" class="form-control" placeholder="Note"></textarea>
+                <textarea type="text" name="note" value="{{ $usrinventory->note }}" class="form-control" placeholder="Note"></textarea>
             </div>
         </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -74,11 +74,11 @@ class usrInventoryController extends Controller
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'kd_barang' => 'required',
-            'kategori' => 'required',
-            'nama_barang' => 'required',
-            'jml_barang' => 'required',
-            'tgl_input' => 'required',
+            'kd_barang' => 'nullable',
+            'kategori' => 'nullable',
+            'nama_barang' => 'nullable',
+            'jml_barang' => 'nullable',
+            'tgl_input' => 'nullable',
             'note' => 'nullable',
         ]);
          
