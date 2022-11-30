@@ -1,6 +1,7 @@
 @extends('dashboards.users.layouts.user-dash-layout')
 @section('title','Leave')
 @section('content')
+
 <style>
     #button1 {
         margin-top: 5px;
@@ -98,7 +99,5 @@
         </div>
     </div>
 </form>
-<script>
-    alert("Dimohon untuk menginputkan data dengan baik dan benar");
-</script>
+
 @endsection

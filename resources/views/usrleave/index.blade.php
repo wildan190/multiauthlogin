@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <button type="button" class="b1 btn-outline-success"><a href="{{ route('leave.create') }}">+ Add</a></button>
+    <button type="button" class="b1 btn-outline-success"><a href="{{ route('usrleave.create') }}">+ Add</a></button>
     <button class="b1"><a href="{{ route('leave.history') }}">Show History</a></button>
 
     <!-- TABEL UTAMA -->
