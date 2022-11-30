@@ -129,7 +129,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
+            <h3 class="card-title">Items Data</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -137,11 +137,11 @@
                 <thead>
                     <tr>
                         <th width="20px" class="text-center">No</th>
-                        <th>ID Barang</th>
-                        <th>Kategori</th>
-                        <th>Nama Barang</th>
-                        <th>Jumlah Barang</th>
-                        <th>Tanggal Input</th>
+                        <th>Item Id</th>
+                        <th>Category</th>
+                        <th>Item Name</th>
+                        <th>Amount Item</th>
+                        <th class="text-center">Date Input</th>
                         <th>Note</th>
                         <th width="280px" class="text-center">Action</th>
                     </tr>
@@ -149,11 +149,11 @@
                     @foreach ($inventory as $inventory)
                     <tr>
                         <td class="text-center">{{ ++$i }}</td>
-                        <td>{{$inventory->kd_barang}}</td>
+                        <td class="text-center">{{$inventory->kd_barang}}</td>
                         <td>{{$inventory->kategori}}</td>
                         <td>{{$inventory->nama_barang}}</td>
-                        <td>{{$inventory->jml_barang}}</td>
-                        <td>{{$inventory->tgl_input}}</td>
+                        <td class="text-center">{{$inventory->jml_barang}}</td>
+                        <td class="text-center">{{$inventory->tgl_input}}</td>
                         <td>{{$inventory->note}}</td>
                         <td class="text-center">
 

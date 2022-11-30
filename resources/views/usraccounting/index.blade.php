@@ -9,7 +9,7 @@
                 <h2>Accounting</h2>
             </div>
             <div class="float-right">
-                <a class="btn btn-success" href="{{ route('timesheet.create') }}"> Add New</a>
+                <a class="btn btn-success" href="{{ route('usraccounting.create') }}"> Add New</a>
             </div>
         </div>
     </div>

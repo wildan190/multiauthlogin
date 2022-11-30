@@ -52,7 +52,7 @@ class usrAccountingController extends Controller
         return view('usraccounting.show',compact('usraccounting'));
     }
   
-    public function edit(accounting $accounting)
+    public function edit(accounting $usraccounting)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
@@ -60,37 +60,37 @@ class usrAccountingController extends Controller
         return view('usraccounting.edit',compact('usraccounting'));
     }
   
-    public function update(Request $request, accounting $accounting)
+    public function update(Request $request, accounting $usraccounting)
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'cash' => 'required',
-            'tools' => 'required',
-            'equipment' => 'required',
-            'debt' => 'required',
-            'details' => 'required',
+            'cash' => 'nullable',
+            'tools' => 'nullable',
+            'equipment' => 'nullable',
+            'debt' => 'nullable',
+            'details' => 'nullable',
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $accounting->update($request->all());
+        $usraccounting->update($request->all());
         
         /// setelah berhasil mengubah data
         return redirect()->route('usraccounting.index')
                         ->with('success','accounting updated successfully');
     }
   
-    public function destroy(accounting $accounting)
+    public function destroy(accounting $usraccounting)
     {
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
-        $accounting->delete();
+        $usraccounting->delete();
   
         return redirect()->route('usraccounting.index')
                         ->with('success','accounting deleted successfully');
     }
 
-    public function cari_data(Request $request)
+    public function cari_data_filter(Request $request)
     {
-        $keyword = $request->search;
+        $keyword = $request->cari_data_filter;
         $accounting = accounting::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
         return view('accounting.index', compact('accounting'))->with('i', (request()->input('page', 1) - 1) * 5);
     }

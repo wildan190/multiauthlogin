@@ -52,7 +52,7 @@ class usrInventoryController extends Controller
                         ->with('success','Data created successfully.');
     }
   
-    public function show(Inventory $inventory)
+    public function show(Inventory $usrinventory)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
@@ -61,7 +61,7 @@ class usrInventoryController extends Controller
     }
 
   
-    public function edit(Inventory $inventory)
+    public function edit(Inventory $usrinventory)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
@@ -70,7 +70,7 @@ class usrInventoryController extends Controller
     }
 
   
-    public function update(Request $request, Inventory $inventory)
+    public function update(Request $request, Inventory $usrinventory)
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
@@ -83,17 +83,17 @@ class usrInventoryController extends Controller
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $inventory->update($request->all());
+        $usrinventory->update($request->all());
         
         /// setelah berhasil mengubah data
         return redirect()->route('usrinventory.index')
                         ->with('success','Data updated successfully');
     }
   
-    public function destroy(Inventory $inventory)
+    public function destroy(Inventory $usrinventory)
     {
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
-        $inventory->delete();
+        $usrinventory->delete();
   
         return redirect()->route('usrinventory.index')
                         ->with('success','Record deleted successfully');

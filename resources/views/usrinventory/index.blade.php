@@ -148,32 +148,33 @@
                         <th>Note</th>
                         <th width="280px" class="text-center">Action</th>
                     </tr>
-                    @foreach ($usrinventory as $inventory)
-                    <tr>
-                        <td class="text-center">{{ ++$i }}</td>
-                        <td>{{$inventory->kd_barang}}</td>
-                        <td>{{$inventory->kategori}}</td>
-                        <td>{{$inventory->nama_barang}}</td>
-                        <td>{{$inventory->jml_barang}}</td>
-                        <td>{{$inventory->tgl_input}}</td>
-                        <td>{{$inventory->note}}</td>
-                        <td class="text-center">
+                </thead>
+                @foreach ($usrinventory as $inventory)
+                <tr>
+                    <td class="text-center">{{ ++$i }}</td>
+                    <td>{{$inventory->kd_barang}}</td>
+                    <td>{{$inventory->kategori}}</td>
+                    <td>{{$inventory->nama_barang}}</td>
+                    <td>{{$inventory->jml_barang}}</td>
+                    <td>{{$inventory->tgl_input}}</td>
+                    <td>{{$inventory->note}}</td>
+                    <td class="text-center">
 
-                            <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
+                        <form action="{{ route('inventory.destroy',$inventory->id) }}" method="POST">
 
-                                <a class="btn btn-info btn-sm" hidden href="{{ route('inventory.show',$inventory->id) }}">Show</a>
+                            <a class="btn btn-info btn-sm" hidden href="{{ route('inventory.show',$inventory->id) }}">Show</a>
 
-                                <a class="btn btn-primary btn-sm" hidden href="{{ route('usrinventory.edit',$inventory->id) }}">Edit</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('usrinventory.edit',$inventory->id) }}">Edit</a>
 
 
-                                @csrf
-                                @method('DELETE')
+                            @csrf
+                            @method('DELETE')
 
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
             </table>
         </div>
     </div>
