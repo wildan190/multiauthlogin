@@ -18,8 +18,11 @@ use App\Http\Controllers\usrResignationController;
 use App\Http\Controllers\usrInventoryController;
 use App\Http\Controllers\addNewController;
 use App\Http\Controllers\usrAccountingController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ChartJsController;
 
+Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
 Route::resource('posts', PostController::class);
 Route::resource('usrposts', usrPostController::class);
 Route::resource('timesheet', TimesheetController::class);
@@ -34,6 +37,7 @@ Route::resource('usrresignation', usrResignationController::class);
 Route::resource('usrinventory', usrInventoryController::class);
 Route::resource('usraccounting', usrAccountingController::class);
 Route::resource('addnew', addNewController::class);
+
 Route::get('/search', [timesheetController::class, 'search'])->name('search');
 Route::get('/finding', [usrtimesheetController::class, 'finding'])->name('finding');
 Route::get('/carikan', [inventoryController::class, 'carikan'])->name('carikan');
