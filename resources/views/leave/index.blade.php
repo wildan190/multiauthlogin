@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    
+
     <button type="button" class="b1 btn-outline-success"><a href="{{ route('leave.create') }}">+ Add</a></button>
     <button class="b1"><a href="{{ route('leave.history') }}">Show History</a></button>
 
@@ -73,41 +73,41 @@
                     <th>Action By</th>
                     <th>Action Date</th>
                     <th width="280px" class="text-center">Option</th>
+                </thead>
+                </tr>
+                @foreach ($leave as $leave)
+                <tr>
+                    <td class="text-center">{{ ++$i }}</td>
+                    <td class="paragraph">
+                        <p>
+                            employee : {{$leave->employee}}<br>
+                            Leave Type : {{$leave->leave_type}}<br>
+                            from : {{$leave->from_date}}<br>
+                            To : {{$leave->to_date}}<br>
+                            days : {{$leave->days}}<br>
+                        </p>
+                    </td>
+                    <td>{{$leave->status}}</td>
+                    <td>{{$leave->action_by}}</td>
+                    <td>{{$leave->action_date}}</td>
+                    <td class="text-center">
 
-                    </tr>
-                    @foreach ($leave as $leave)
-                    <tr>
-                        <td class="text-center">{{ ++$i }}</td>
-                        <td class="paragraph">
-                            <p>
-                                employee : {{$leave->employee}}<br>
-                                Leave Type : {{$leave->leave_type}}<br>
-                                from : {{$leave->from_date}}<br>
-                                To : {{$leave->to_date}}<br>
-                                days : {{$leave->days}}<br>
-                            </p>
-                        </td>
-                        <td>{{$leave->status}}</td>
-                        <td>{{$leave->action_by}}</td>
-                        <td>{{$leave->action_date}}</td>
-                        <td class="text-center">
+                        <form action="{{ route('leave.destroy',$leave->id) }}" method="POST">
 
-                            <form action="{{ route('leave.destroy',$leave->id) }}" method="POST">
+                            <a class="btn btn-info btn-sm" href="{{ route('leave.show',$leave->id) }}">Show</a>
 
-                                <a class="btn btn-info btn-sm" href="{{ route('leave.show',$leave->id) }}">Show</a>
-
-                                <a class="btn btn-primary btn-sm" href="{{ route('leave.edit',$leave->id) }}">Action</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('leave.edit',$leave->id) }}">Action</a>
 
 
-                                @csrf
-                                @method('DELETE')
+                            @csrf
+                            @method('DELETE')
 
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this data ?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
 
-                    @endforeach
+                @endforeach
             </table>
         </div>
     </div>
